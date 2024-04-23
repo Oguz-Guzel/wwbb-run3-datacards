@@ -1,0 +1,27 @@
+### Date : 23/04/2024 14:26:51
+imax 1 number of bins
+jmax 5 number of processes minus 1
+kmax 11 number of nuisance parameters
+--------------------------------------------------------------------------------
+shapes * DL_DNN_score_2022 DL_DNN_score_2022.root $PROCESS $PROCESS__$SYSTEMATIC
+--------------------------------------------------------------------------------
+bin                          DL_DNN_score_2022            
+observation                  201264.0                     
+--------------------------------------------------------------------------------
+bin                          DL_DNN_score_2022            DL_DNN_score_2022            DL_DNN_score_2022            DL_DNN_score_2022            DL_DNN_score_2022            DL_DNN_score_2022            
+process                      ggHH_kl_5_kt_1_hbbhww        ggHH_kl_2p45_kt_1_hbbhww     ggHH_kl_1_kt_1_hbbhww        TT                           WJets                        others                       
+process                      -2                           -1                           0                            1                            2                            3                            
+rate                         2.06638502                   0.13307669                   0.38550631                   173862.30959837              83.68903299                  27318.17055008               
+--------------------------------------------------------------------------------
+btagSF_shape_cferr1          shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_cferr2          shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_hf              shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_hfstats1        shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_hfstats2        shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_lf              shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_lfstats1        shape                        -                            -                            1                            1                            1                            1                            
+btagSF_shape_lfstats2        shape                        -                            -                            1                            1                            1                            1                            
+jesTotal                     shape                        1                            1                            1                            1                            1                            1                            
+lumi                         lnN                          1.01                         1.01                         1.01                         1.01                         1.01                         1.01                         
+pileup                       shape                        1                            1                            1                            1                            1                            1                            
+DL_DNN_score_2022            autoMCStats 10 0 1
