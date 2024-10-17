@@ -1,5 +1,5 @@
 path:
-  /home/ucl/cp3/aguzel/bamboo_105/wwbb2/output/v0.9.64-mvaEval
+  /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.0.7_2023-dnnEval-v2.2/
 # Either a single path as a string, or a list of string paths to the bamboo output(s)
 # Can also be a dictionary with the eras as keys  
 # Examples : 
@@ -25,7 +25,7 @@ path:
 #       - <path_to_bamboo_output_2016>
 #         [...]
 
-outputDir: wwbb-run3-datacards/output/v0.9.64
+outputDir: /afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/output/v1.0.7-2023full/
 # path to datacard output dir (can be relative or absolute)
 # Note : for scans can be useful to use the formatting (see relevant section)
 
@@ -38,7 +38,7 @@ textfiles:
 # If specified needs to be of type str with `<name of the file>.txt`, in that case a single txt datacard will be produced with all categories combined
 # If name includes a `{}` (eg `my_datacard_{}.txt`), then one datacard per category is created but following the convention `my_datacard_{category}.txt`
 
-yamlName: /home/ucl/cp3/aguzel/bamboo_105/wwbb2/output/v0.9.64-mvaEval/plots.yml 
+yamlName: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.0.7_2023-dnnEval-v2.2/plots.yml
 # Bamboo plotIt output yaml file name 
 # -> needed so the script can go fetch the cross section, branching ratio, event weight sum to normalise the histograms 
 # In case you have several yaml files (eg, when datadriven is involved), you can include several as a list, just note that if several groups have same name, it will only take it once
@@ -48,8 +48,8 @@ era:
 # Era as single string or list of eras #
 # The datacard format will be {category}_{era}.root/txt
 # Needs to match the dictionary entries if used in this config
-  - '2022'
-  - '2022EE'
+  - '2023'
+  - '2023BPix'
 
 plotIt:
 # To cross check what was produced in the datacards, plotIt is available in subdirectory `plotIt`
@@ -72,12 +72,12 @@ plotIt:
    - 0.9
   columns: 3
 
-combineConfigs: 
-# Configs to run combine -> check combine_example.yml
-  mode: limits
-  command: "combine -M AsymptoticLimits -t -1"
-  bins: 
-    - DL_InvM_ll
+# combineConfigs: 
+# # Configs to run combine -> check combine_example.yml
+#   mode: limits
+#   command: "combine -M AsymptoticLimits -t -1"
+#   bins: 
+#     - DL_dnn_score
 # normSyst: 
 normSyst:
   lumi:
@@ -99,13 +99,17 @@ normSyst:
 
 shapeSyst:
   btagSF_shape_cferr1: btagSF_shape_cferr1
-  btagSF_shape_lfstats1: btagSF_shape_lfstats1
+  btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
+  btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
   pileup: pileup
-  btagSF_shape_hfstats2: btagSF_shape_hfstats2
-  btagSF_shape_lfstats2: btagSF_shape_lfstats2
+  btagSF_shape_hfstats2_2023: btagSF_shape_hfstats2_2023
+  btagSF_shape_hfstats2_2023BPix: btagSF_shape_hfstats2_2023BPix
+  btagSF_shape_lfstats2_2023: btagSF_shape_lfstats2_2023
+  btagSF_shape_lfstats2_2023BPix: btagSF_shape_lfstats2_2023BPix
   btagSF_shape_cferr2: btagSF_shape_cferr2
   jesTotal: jesTotal
-  btagSF_shape_hfstats1: btagSF_shape_hfstats1
+  btagSF_shape_hfstats1_2023: btagSF_shape_hfstats1_2023
+  btagSF_shape_hfstats1_2023BPix: btagSF_shape_hfstats1_2023BPix
   btagSF_shape_hf: btagSF_shape_hf
   btagSF_shape_lf: btagSF_shape_lf
 # List of shape systematics to be converted to the root files and datacards
@@ -118,7 +122,7 @@ shapeSyst:
 #   - if `{era}` is in the value name, it will be replaced by the era in question (eg, when decorrelating per era)
 
 quantiles: &quant [0., 0.125, 0.25 , 0.375, 0.5  , 0.625, 0.75 , 0.875, 1.]
-backgrounds: &back [TT,WJets,others]
+backgrounds: &back [TT,DY,others]
 
 rebin:
 # If rebinning is wanted, this entry should be present and a dictionnary
@@ -128,7 +132,7 @@ rebin:
 #   - method : the name of the rebinning method as defined in the script
 #   - params : list of parameters to be passed to the rebinning class 
 # -> see rebinning_example.yml
-  DL_InvM_ll:
+  DL_dnn_score:
     method: quantile
     params: [*quant, *back]
 
@@ -191,87 +195,67 @@ groups:
     fill-color: "#fff3b0"
     legend: 'TT'
     files: 
-      - TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-      - TTtoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TTtoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-  WJets:
-    type: mc
-    fill-color: "#e09f3e"
-    legend: 'WJets'
-    files:
-      - WtoLNu-2Jets_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - WtoLNu-2Jets_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - WtoLNu-2Jets_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - WtoLNu-2Jets_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - WtoLNu-2Jets_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - WtoLNu-2Jets_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-  others:
+      - TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023.root
+      - TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023BPix.root
+  DY:
     type: mc
     fill-color: "#9e2a2b"
-    legend: 'others'
+    legend: 'DY'
     files: 
-      - DYto2L-2Jets_MLL-10to50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - DYto2L-2Jets_MLL-10to50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - DYto2L-2Jets_MLL-50_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - DYto2L-2Jets_MLL-50_0J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - DYto2L-2Jets_MLL-50_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - DYto2L-2Jets_MLL-50_1J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - DYto2L-2Jets_MLL-50_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022.root
-      - DYto2L-2Jets_MLL-50_2J_TuneCP5_13p6TeV_amcatnloFXFX-pythia8__2022EE.root
-      - WW_TuneCP5_13p6TeV_pythia8__2022.root
-      - WW_TuneCP5_13p6TeV_pythia8__2022EE.root
-      - WZ_TuneCP5_13p6TeV_pythia8__2022.root
-      - WZ_TuneCP5_13p6TeV_pythia8__2022EE.root
-      - ZZ_TuneCP5_13p6TeV_pythia8__2022.root
-      - ZZ_TuneCP5_13p6TeV_pythia8__2022EE.root
-      - TbarWplusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TbarWplusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-      - TbarWplustoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TbarWplustoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-      - TWminusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TWminusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-      - TWminustoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022.root
-      - TWminustoLNu2Q_TuneCP5_13p6TeV_powheg-pythia8__2022EE.root
-  data:
+      - DYto2L-2Jets_MLL-10to50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023.root
+      - DYto2L-2Jets_MLL-10to50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023BPix.root
+      - DYto2L-2Jets_MLL-50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023.root
+      - DYto2L-2Jets_MLL-50_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023BPix.root
+
+  others:
+    type: mc
+    fill-color: "#2a2b60"
+    legend: "others"
+    files:
+      - TbarWplusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023.root
+      - TbarWplusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023BPix.root
+      - TWminusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023.root
+      - TWminusto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8_2023BPix.root
+      - WtoLNu-2Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023.root
+      - WtoLNu-2Jets_TuneCP5_13p6TeV_amcatnloFXFX-pythia8_2023BPix.root
+      - WW_TuneCP5_13p6TeV_pythia8_2023.root
+      - WW_TuneCP5_13p6TeV_pythia8_2023BPix.root
+      - WZ_TuneCP5_13p6TeV_pythia8_2023.root
+      - WZ_TuneCP5_13p6TeV_pythia8_2023BPix.root
+      - ZZ_TuneCP5_13p6TeV_pythia8_2023.root
+      - ZZ_TuneCP5_13p6TeV_pythia8_2023BPix.root
+
+  data_obs:
     type: data
     legend: 'data'
     files: 
-      - DoubleMuon_Run2022C.root
-      - EGamma_Run2022C.root
-      - EGamma_Run2022D.root
-      - EGamma_Run2022E.root
-      - EGamma_Run2022F.root
-      - EGamma_Run2022G.root
-      - MuonEG_Run2022C.root
-      - MuonEG_Run2022D.root
-      - MuonEG_Run2022E.root
-      - MuonEG_Run2022F.root
-      - MuonEG_Run2022G.root
-      - Muon_Run2022C.root
-      - Muon_Run2022D.root
-      - Muon_Run2022E.root
-      - Muon_Run2022F.root
-      - Muon_Run2022G.root
-      - SingleMuon_Run2022C.root
+      - EGamma_Run2023C.root
+      - EGamma_Run2023D.root
+      - MuonEG_Run2023C.root
+      - MuonEG_Run2023D.root
+      - Muon_Run2023C.root
+      - Muon_Run2023D.root
+
   ggHH_kl_1_kt_1_hbbhww:
     type: signal
     legend: 'signal'
     line-color: 3
     files:
-     - GluGlutoHHto2B2Vto2L2Nu_kl-1p00_kt-1p00_c2-0p00__2022.root
-     - GluGlutoHHto2B2Vto2L2Nu_kl-1p00_kt-1p00_c2-0p00__2022EE.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-1p00_kt-1p00_c2-0p00_2023.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-1p00_kt-1p00_c2-0p00_2023BPix.root
+
   ggHH_kl_2p45_kt_1_hbbhww:
     type: signal
     legend: 'signal'
     line-color: 4
     files:
-      - GluGlutoHHto2B2WtoLNu2Q_kl-2p45_kt-1p00_c2-0p00__2022.root # run 2 signal sample
-      - GluGlutoHHto2B2WtoLNu2Q_kl-2p45_kt-1p00_c2-0p00__2022EE.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-2p45_kt-1p00_c2-0p00_2023.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-2p45_kt-1p00_c2-0p00_2023BPix.root
+
   ggHH_kl_5_kt_1_hbbhww:
     type: signal
     legend: 'signal'
     line-color: 5
     files:
-      - GluGlutoHHto2B2Vto2L2Nu_kl-5p00_kt-1p00_c2-0p00__2022.root # run 2 signal sample
-      - GluGlutoHHto2B2Vto2L2Nu_kl-5p00_kt-1p00_c2-0p00__2022EE.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-5p00_kt-1p00_c2-0p00_2023.root
+     - GluGlutoHHto2B2Vto2L2Nu_kl-5p00_kt-1p00_c2-0p00_2023BPix.root

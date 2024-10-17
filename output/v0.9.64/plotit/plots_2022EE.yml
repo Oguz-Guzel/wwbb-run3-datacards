@@ -36,32 +36,12 @@ files:
     generated-events: 1.0
     group: data
     type: data
-  data_obs_2022EE.root:
-    cross-section: 3.796939666628697e-05
-    era: 2022EE
-    generated-events: 1.0
-    group: data
-    type: data
   ggHH_kl_1_kt_1_hbbhww_2022EE.root:
     cross-section: 3.796939666628697e-05
     era: 2022EE
     generated-events: 1.0
     legend: signal
     line-color: 3
-    type: signal
-  ggHH_kl_2p45_kt_1_hbbhww_2022EE.root:
-    cross-section: 3.796939666628697e-05
-    era: 2022EE
-    generated-events: 1.0
-    legend: signal
-    line-color: 4
-    type: signal
-  ggHH_kl_5_kt_1_hbbhww_2022EE.root:
-    cross-section: 3.796939666628697e-05
-    era: 2022EE
-    generated-events: 1.0
-    legend: signal
-    line-color: 5
     type: signal
   others_2022EE.root:
     cross-section: 3.796939666628697e-05

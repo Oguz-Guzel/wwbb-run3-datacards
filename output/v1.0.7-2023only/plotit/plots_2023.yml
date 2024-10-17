@@ -1,0 +1,115 @@
+configuration:
+  blinded-range-fill-color: '#FDFBFB'
+  blinded-range-fill-style: 4050
+  eras:
+  - '2023'
+  experiment: CMS
+  extra-label: Preliminary datacard
+  height: 599
+  luminosity:
+    '2023': 17794.0
+  luminosity-error: 0.025
+  luminosity-label: '%1$.2f fb^{-1} (13 TeV)'
+  margin-bottom: 0.13
+  margin-left: 0.15
+  margin-right: 0.03
+  margin-top: 0.05
+  root: root
+  show-overflow: 'true'
+  width: 800
+files:
+  DY_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    group: DY
+    type: mc
+  TT_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    group: TT
+    type: mc
+  data_obs_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    group: data_obs
+    type: data
+  ggHH_kl_1_kt_1_hbbhww_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    legend: signal
+    line-color: 3
+    type: signal
+  ggHH_kl_2p45_kt_1_hbbhww_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    legend: signal
+    line-color: 4
+    type: signal
+  ggHH_kl_5_kt_1_hbbhww_2023.root:
+    cross-section: 5.619871866921434e-05
+    era: '2023'
+    generated-events: 1.0
+    legend: signal
+    line-color: 5
+    type: signal
+groups:
+  DY:
+    fill-color: '#9e2a2b'
+    legend: DY
+  TT:
+    fill-color: '#fff3b0'
+    legend: TT
+  data_obs:
+    legend: data
+plots:
+  DL_DNN_score:
+    blinded-range:
+    - 0.25
+    - 0.999
+    era: '2023'
+    legend-columns: 3
+    legend-position:
+    - 0.2
+    - 0.7
+    - 0.9
+    - 0.9
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 34170508.816932395
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions:
+    - pdf
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: DNN Score
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 51255.763225398594
+    y-axis-show-zero: true
+systematics:
+- btagSF_shape_hfstats2_2023
+- btagSF_shape_lfstats2_2023
+- btagSF_shape_cferr2
+- pile
+- jesTotal
+- btagSF_shape_hf
+- btagSF_shape_lf
+- btagSF_shape_cferr1
+- btagSF_shape_lfstats1_2023
+- btagSF_shape_hfstats1_2023

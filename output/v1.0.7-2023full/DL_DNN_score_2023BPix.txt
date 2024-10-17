@@ -1,0 +1,31 @@
+### Date : 17/10/2024 16:52:35
+imax 1 number of bins
+jmax 5 number of processes minus 1
+kmax 15 number of nuisance parameters
+--------------------------------------------------------------------------------
+shapes * DL_DNN_score_2023BPix DL_DNN_score_2023BPix.root $PROCESS $PROCESS__$SYSTEMATIC
+--------------------------------------------------------------------------------
+bin                                DL_DNN_score_2023BPix              
+observation                        357787.0                           
+--------------------------------------------------------------------------------
+bin                                DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              
+process                            ggHH_kl_5_kt_1_hbbhww              ggHH_kl_2p45_kt_1_hbbhww           ggHH_kl_1_kt_1_hbbhww              TT                                 DY                                 others                             
+process                            -2                                 -1                                 0                                  1                                  2                                  3                                  
+rate                               3.12131401                         0.64830315                         6.76867813                         222983.44651459                    25878.99717332                     12863.34459258                     
+--------------------------------------------------------------------------------
+btagSF_shape_cferr1                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_cferr2                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_hf                    shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_hfstats1_2023         shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_hfstats1_2023BPix     shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_hfstats2_2023         shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_hfstats2_2023BPix     shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_lf                    shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_lfstats1_2023         shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_lfstats1_2023BPix     shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_lfstats2_2023         shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+btagSF_shape_lfstats2_2023BPix     shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+jesTotal                           shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+lumi                               lnN                                1.01                               1.01                               1.01                               1.01                               1.01                               1.01                               
+pileup                             shape                              1                                  1                                  1                                  1                                  1                                  1                                  
+DL_DNN_score_2023BPix              autoMCStats 10 0 1
