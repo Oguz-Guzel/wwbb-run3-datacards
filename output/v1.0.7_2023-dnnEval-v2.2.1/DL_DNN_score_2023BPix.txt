@@ -1,17 +1,17 @@
-### Date : 18/10/2024 15:26:37
+### Date : 18/10/2024 15:28:28
 imax 1 number of bins
 jmax 5 number of processes minus 1
 kmax 15 number of nuisance parameters
 --------------------------------------------------------------------------------
-shapes * DL_DNN_score_2023 DL_DNN_score_2023.root $PROCESS $PROCESS__$SYSTEMATIC
+shapes * DL_DNN_score_2023BPix DL_DNN_score_2023BPix.root $PROCESS $PROCESS__$SYSTEMATIC
 --------------------------------------------------------------------------------
-bin                                DL_DNN_score_2023                  
-observation                        357787.0                           
+bin                                DL_DNN_score_2023BPix              
+observation                        358148.0                           
 --------------------------------------------------------------------------------
-bin                                DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  
+bin                                DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              DL_DNN_score_2023BPix              
 process                            ggHH_kl_5_kt_1_hbbhww              ggHH_kl_2p45_kt_1_hbbhww           ggHH_kl_1_kt_1_hbbhww              TT                                 DY                                 others                             
 process                            -2                                 -1                                 0                                  1                                  2                                  3                                  
-rate                               5.87669681                         1.22060166                         12.74382168                        419825.14519951                    48724.03721320                     24218.63862875                     
+rate                               3.11798609                         0.64830315                         6.76867813                         222986.68804115                    26410.20924508                     12867.43448208                     
 --------------------------------------------------------------------------------
 btagSF_shape_cferr1                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
 btagSF_shape_cferr2                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
@@ -28,4 +28,4 @@ btagSF_shape_lfstats2_2023BPix     shape                              1         
 jesTotal                           shape                              1                                  1                                  1                                  1                                  1                                  1                                  
 lumi                               lnN                                1.01                               1.01                               1.01                               1.01                               1.01                               1.01                               
 pileup                             shape                              1                                  1                                  1                                  1                                  1                                  1                                  
-DL_DNN_score_2023                  autoMCStats 10 0 1
+DL_DNN_score_2023BPix              autoMCStats 10 0 1

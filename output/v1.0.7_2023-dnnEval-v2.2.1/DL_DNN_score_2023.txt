@@ -1,4 +1,4 @@
-### Date : 18/10/2024 15:26:37
+### Date : 18/10/2024 15:28:27
 imax 1 number of bins
 jmax 5 number of processes minus 1
 kmax 15 number of nuisance parameters
@@ -6,12 +6,12 @@ kmax 15 number of nuisance parameters
 shapes * DL_DNN_score_2023 DL_DNN_score_2023.root $PROCESS $PROCESS__$SYSTEMATIC
 --------------------------------------------------------------------------------
 bin                                DL_DNN_score_2023                  
-observation                        357787.0                           
+observation                        358148.0                           
 --------------------------------------------------------------------------------
 bin                                DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  DL_DNN_score_2023                  
 process                            ggHH_kl_5_kt_1_hbbhww              ggHH_kl_2p45_kt_1_hbbhww           ggHH_kl_1_kt_1_hbbhww              TT                                 DY                                 others                             
 process                            -2                                 -1                                 0                                  1                                  2                                  3                                  
-rate                               5.87669681                         1.22060166                         12.74382168                        419825.14519951                    48724.03721320                     24218.63862875                     
+rate                               5.87043111                         1.22060166                         12.74382168                        419831.24822815                    49724.18403417                     24226.33892435                     
 --------------------------------------------------------------------------------
 btagSF_shape_cferr1                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
 btagSF_shape_cferr2                shape                              1                                  1                                  1                                  1                                  1                                  1                                  
