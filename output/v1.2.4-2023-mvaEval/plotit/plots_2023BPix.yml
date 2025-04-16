@@ -1,0 +1,270 @@
+configuration:
+  blinded-range-fill-color: '#FDFBFB'
+  blinded-range-fill-style: 4050
+  eras:
+  - 2023BPix
+  experiment: CMS
+  extra-label: Preliminary datacard
+  height: 599
+  luminosity:
+    2023BPix: 9451.0
+  luminosity-error: 0.025
+  luminosity-label: '%1$.2f fb^{-1} (13 TeV)'
+  margin-bottom: 0.13
+  margin-left: 0.15
+  margin-right: 0.03
+  margin-top: 0.05
+  root: root
+  show-overflow: 'true'
+  width: 800
+files:
+  DY_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    group: DY
+    type: mc
+  TT_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    group: TT
+    type: mc
+  data_obs_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    group: data_obs
+    type: data
+  ggHH_kl_0_kt_1_hbbhww_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    legend: signal
+    line-color: 3
+    type: signal
+  ggHH_kl_1_kt_1_hbbhww_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    legend: signal
+    line-color: 3
+    type: signal
+  ggHH_kl_2p45_kt_1_hbbhww_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    legend: signal
+    line-color: 4
+    type: signal
+  ggHH_kl_5_kt_1_hbbhww_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    legend: signal
+    line-color: 5
+    type: signal
+  others_2023BPix.root:
+    cross-section: 0.00010580890911014708
+    era: 2023BPix
+    generated-events: 1.0
+    group: others
+    type: mc
+groups:
+  DY:
+    fill-color: '#9e2a2b'
+    legend: DY
+  TT:
+    fill-color: '#fff3b0'
+    legend: TT
+  data_obs:
+    legend: data
+  others:
+    fill-color: '#2a2b60'
+    legend: others
+plots:
+  DL_VBF_boosted:
+    blinded-range: &id001
+    - 0.25
+    - 0.999
+    era: 2023BPix
+    legend-columns: 3
+    legend-position: &id002
+    - 0.2
+    - 0.7
+    - 0.9
+    - 0.9
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 117330.25524346252
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions: &id003
+    - pdf
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: ML Score VBF boosted ee
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 175.9953828651938
+    y-axis-show-zero: true
+  DL_VBF_resolved:
+    blinded-range: *id001
+    era: 2023BPix
+    legend-columns: 3
+    legend-position: *id002
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 573101.6913725351
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions: *id003
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: ML Score VBF resolved ee
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 859.6525370588026
+    y-axis-show-zero: true
+  DL_boosted:
+    blinded-range:
+    - 0.25
+    - 0.999
+    era: 2023BPix
+    legend-columns: 3
+    legend-position: *id002
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 168367.44230418015
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions: *id003
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: DL Boosted ML score
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 252.55116345627022
+    y-axis-show-zero: true
+  DL_resolved1b:
+    blinded-range:
+    - 0.25
+    - 0.999
+    era: 2023BPix
+    legend-columns: 3
+    legend-position: *id002
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 31548068.5861346
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions: *id003
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: DL Resolved 1b ML score
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 47322.102879201906
+    y-axis-show-zero: true
+  DL_resolved2b:
+    blinded-range:
+    - 0.25
+    - 0.999
+    era: 2023BPix
+    legend-columns: 3
+    legend-position: *id002
+    log-y: both
+    log-y-axis-range:
+    - 0.01
+    - 24794519.800349258
+    normalized: false
+    ratio-y-axis: '#frac{Data}{MC}'
+    ratio-y-axis-range:
+    - 0.8
+    - 1.2
+    save-extensions: *id003
+    show-overflow: true
+    show-ratio: true
+    sort-by-yields: true
+    x-axis: DL Resolved 2b ML score
+    x-axis-range:
+    - 0.0
+    - 1.0
+    y-axis: Events
+    y-axis-format: '%1%'
+    y-axis-range:
+    - 0.0
+    - 37191.77970052389
+    y-axis-show-zero: true
+systematics:
+- jesTotal
+- btagSF_shape_hfstats1_2023BPix
+- btagSF_shape_cferr1
+- muonTrgSF
+- btagSF_shape_cferr2
+- elTrgSF
+- btagSF_shape_lfstats2_2023BPix
+- btagSF_shape_hf
+- jer1
+- btagSF_shape_lfstats1_2023BPix
+- muonIdSF
+- btagSF_shape_lf
+- elIdSF
+- jer2
+- jer5
+- jer3
+- muonIsoSF
+- jer4
+- jer0
+- btagSF_shape_hfstats2_2023BPix
+- pile
+- ZpT1
+- ZpT10
+- ZpT5
+- ZpT7
+- ZpT2
+- ZpT3
+- ZpT4
+- ZpT9
+- ZpT6
+- ZpT8

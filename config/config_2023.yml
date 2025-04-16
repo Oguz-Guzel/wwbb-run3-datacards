@@ -1,0 +1,91 @@
+path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.2.4-2023-mvaEval/
+
+outputDir: /afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/output/v1.2.4-2023-mvaEval/
+
+use_syst: True
+
+# textfiles:
+
+yamlName: plots.yml
+
+era:
+  - '2023'
+  - '2023BPix'
+
+plotIt:
+  legend:
+    position:
+      - 0.2
+      - 0.7
+      - 0.9
+      - 0.9
+    columns: 3
+
+# combineConfigs:
+
+normSyst:
+  lumi:
+    val: 1.013
+
+shapeSyst:
+  btagSF_shape_cferr1: btagSF_shape_cferr1
+  btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
+  btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
+  pileup: pileup
+  btagSF_shape_hfstats2_2023: btagSF_shape_hfstats2_2023
+  btagSF_shape_hfstats2_2023BPix: btagSF_shape_hfstats2_2023BPix
+  btagSF_shape_lfstats2_2023: btagSF_shape_lfstats2_2023
+  btagSF_shape_lfstats2_2023BPix: btagSF_shape_lfstats2_2023BPix
+  btagSF_shape_cferr2: btagSF_shape_cferr2
+  jesTotal: jesTotal
+  btagSF_shape_hfstats1_2023: btagSF_shape_hfstats1_2023
+  btagSF_shape_hfstats1_2023BPix: btagSF_shape_hfstats1_2023BPix
+  btagSF_shape_hf: btagSF_shape_hf
+  btagSF_shape_lf: btagSF_shape_lf
+  jer5: jer5
+  jer4: jer4
+  jer3: jer3
+  jer2: jer2
+  jer1: jer1
+  jer0: jer0
+  elIdSF: elIdSF
+  elTrgSF: elTrgSF
+  muonIdSF: muonIdSF
+  muonIsoSF: muonIsoSF
+  muonTrgSF: muonTrgSF
+  pileup: pileup
+  ZpT1: ZpT1
+  ZpT2: ZpT2
+  ZpT3: ZpT3
+  ZpT4: ZpT4
+  ZpT5: ZpT5
+  ZpT6: ZpT6
+  ZpT7: ZpT7
+  ZpT8: ZpT8
+  ZpT9: ZpT9
+  ZpT10: ZpT10
+
+quantiles: &quant [0., 0.4, 0.45, 0.5, 0.55, 0.625, 0.75, 0.875, 1.]
+backgrounds: &back [TT, DY, others]
+
+# rebin:
+#   DL_score:
+#     method: quantile
+#     params: [*quant, *back]
+
+#histCorrections:
+
+histConverter:
+  DL_boosted:
+    - DL_boosted_ml_score
+  DL_resolved1b:
+    - DL_resolved1b_ml_score
+  DL_resolved2b:
+    - DL_resolved2b_ml_score
+  DL_VBF_boosted:
+    - DL_VBF_boosted_ml_score
+  DL_VBF_resolved:
+    - DL_VBF_resolved_ml_score
+groups:
+  '2023': !include samples_2023.yml
+  '2023BPix': !include samples_2023BPix.yml

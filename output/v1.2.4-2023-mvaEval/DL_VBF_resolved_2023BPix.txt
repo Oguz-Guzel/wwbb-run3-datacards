@@ -1,0 +1,40 @@
+### Date : 16/04/2025 10:31:25
+imax 1 number of bins
+jmax 6 number of processes minus 1
+kmax 24 number of nuisance parameters
+--------------------------------------------------------------------------------
+shapes * DL_VBF_resolved_2023BPix DL_VBF_resolved_2023BPix.root $PROCESS $PROCESS__$SYSTEMATIC
+--------------------------------------------------------------------------------
+bin                          DL_VBF_resolved_2023BPix     
+observation                  1290.0                       
+--------------------------------------------------------------------------------
+bin                          DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     DL_VBF_resolved_2023BPix     
+process                      ggHH_kl_5_kt_1_hbbhww        ggHH_kl_2p45_kt_1_hbbhww     ggHH_kl_1_kt_1_hbbhww        ggHH_kl_0_kt_1_hbbhww        TT                           DY                           others                       
+process                      -3                           -2                           -1                           0                            1                            2                            3                            
+rate                         0.00835106                   0.00212259                   0.00681654                   0.00268424                   915.43826537                 161.77131167                 23.03509187                  
+--------------------------------------------------------------------------------
+ZpT1                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT10                        shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT2                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT3                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT4                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT5                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT6                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT7                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT8                         shape                        -                            -                            -                            -                            -                            1                            -                            
+ZpT9                         shape                        -                            -                            -                            -                            -                            1                            -                            
+elIdSF                       shape                        1                            1                            1                            1                            1                            1                            1                            
+elTrgSF                      shape                        1                            1                            1                            1                            1                            1                            1                            
+jer0                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jer1                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jer2                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jer3                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jer4                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jer5                         shape                        1                            1                            1                            1                            1                            1                            1                            
+jesTotal                     shape                        1                            1                            1                            1                            1                            1                            1                            
+lumi                         lnN                          1.013                        1.013                        1.013                        1.013                        1.013                        1.013                        1.013                        
+muonIdSF                     shape                        1                            1                            1                            1                            1                            1                            1                            
+muonIsoSF                    shape                        1                            1                            1                            1                            1                            1                            1                            
+muonTrgSF                    shape                        1                            1                            1                            1                            1                            1                            1                            
+pileup                       shape                        1                            1                            1                            1                            1                            1                            1                            
+DL_VBF_resolved_2023BPix     autoMCStats 10 0 1
