@@ -45,39 +45,24 @@ output_path=$(law run PlotPullsAndImpacts --version v1.2.4-2023-mvaEval --dataca
 
 cp "$output_path" $DATACARD_DIR'output/v1.2.4-2023-mvaEval/2023_pulls_and_impacts.pdf'
 
-# run PlotUpperLimits task
+# run PlotUpperLimits task (kl scan)
 law run PlotUpperLimits --version v1.2.4-2023-mvaEval --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/combined_datacard.txt' --xsec fb --scan-parameters kl,-5,10,31 --y-log --workers 16 --UpperLimits-workflow htcondor --UpperLimits-tasks-per-job 1
 
 output_path=$(law run PlotUpperLimits --version v1.2.4-2023-mvaEval --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/combined_datacard.txt' --xsec fb --scan-parameters kl,-5,10,31 --y-log --workers 16 --UpperLimits-workflow htcondor --UpperLimits-tasks-per-job 1 --print-out 0 | grep -o 'file://.*' | sed 's|file://||')
 
-cp "$output_path" $DATACARD_DIR'output/v1.2.4-2023-mvaEval/2023_upper_limits.pdf'
+cp "$output_path" $DATACARD_DIR'output/v1.2.4-2023-mvaEval/2023_kl_scan.pdf'
+
+
+
+
+
+
+
+
+
+
 
 # run PlotLikelihoodScan task
 law run PlotLikelihoodScan  --version v1.2.4-2023-mvaEval  --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/combined_datacard.txt' --UpperLimits-custom-args='--X-rtd TMCSO_AdaptivePseudoAsimov=0 --X-rtd TMCSO_PseudoAsimov=0    --X-rt MINIMIZER_frBPixzeDisassociatedParams   --X-rtd MINIMIZER_multiMin_hideConstants --X-rtd MINIMIZER_multiMin_maskConstraints --X-rtd MINIMIZER_multiMin_maskChannels=2  --X-rtd MINIMIZER_skipDiscreteIterations ' --pois kl --scan-parameters kl,-5,10,31 --workers 16  # --print-out 0
 
 law run PlotPostfitSOverB --version v1.2.4-2023-mvaEval --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_boosted_2023.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_boosted_2023BPix.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_resolved1b_2023.txt',,$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_resolved1b_2023BPix.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_resolved2b_2023.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_resolved2b_2023BPix.txt'
-
-
-###### boosted & resolved 1b 2b
-
-# resolved
-law run CombineDatacards --version v1.2.4-2023-mvaEval  --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_1b_2023.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_1b_2023BPix.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_2b_2023.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_2b_2023BPix.txt', # --print-out 0
-
-cp output $DATACARD_DIR'output/v1.2.4-2023-mvaEval/resolved_combined_datacard.txt'
-
-# boosted 
-
-law run CombineDatacards --version v1.2.4-2023-mvaEval  --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_boosted_2023.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/DL_boosted_2023BPix.txt' # --print-out 0
-
-cp output $DATACARD_DIR'output/v1.2.4-2023-mvaEval/boosted_combined_datacard.txt'
-
-# combine resolve and boosted
-
-law run CombineDatacards --version v1.2.4-2023-mvaEval  --datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/resolved_combined_datacard.txt',$DATACARD_DIR'output/v1.2.4-2023-mvaEval/boosted_combined_datacard.txt' # --print-out 0
-
-cp output $DATACARD_DIR'output/v1.2.4-2023-mvaEval/topology_combined_datacard.txt'
-
-# upper limits
-
-law run PlotUpperLimitsAtPoint --version v1.2.4-2023-mvaEval  --multi-datacards $DATACARD_DIR'output/v1.2.4-2023-mvaEval/resolved_combined_datacard.txt':$DATACARD_DIR'output/v1.2.4-2023-mvaEval/boosted_combined_datacard.txt':$DATACARD_DIR'output/v1.2.4-2023-mvaEval/topology_combined_datacard.txt' --datacard-names "Resolved","Boosted","Combined" # --print-out 0
-

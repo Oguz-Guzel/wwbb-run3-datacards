@@ -1,6 +1,10 @@
-path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.2.8-2022-mva_v1_2_3/
+path:
+  2022:
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.2.4-2022-mvaEval/
+  2023:
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.2.4-2023-mvaEval/
 
-outputDir: /afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/output/v1.2.8-2022-mva_v1_2_3/
+outputDir: /afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/output/v1.2.4-2022-2023/
 
 use_syst: True
 
@@ -10,7 +14,7 @@ yamlName: plots.yml
 
 era:
   - "2022"
-  - "2022EE"
+  - "2023"
 
 plotIt:
   legend:
