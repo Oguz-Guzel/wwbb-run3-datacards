@@ -11,5 +11,4 @@ source ~/.bash_profile
 cd BambooDatacardProducer
 source datacard_env/bin/activate
 python produceDataCards.py --yaml $DATACARD_DIR'config/config_2022.yml'
-
-# https://cms-hh.web.cern.ch/tools/inference/
+python produceDataCards.py --yaml $DATACARD_DIR'config/config_2023.yml'
