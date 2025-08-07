@@ -2,7 +2,7 @@
 
 ./start_el7.sh
 
-export DATACARD_DIR=/afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/
+export DATACARD_DIR=/afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/
 
 cd BambooDatacardProducer/inference
 source setup.sh
