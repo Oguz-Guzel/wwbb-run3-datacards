@@ -31,8 +31,6 @@ data_obs:
   files:
     - Muon_Run2022C.root
     - Muon_Run2022D.root
-    - DoubleMuon_Run2022C.root
-    - SingleMuon_Run2022C.root
     - EGamma_Run2022C.root
     - EGamma_Run2022D.root
     - MuonEG_Run2022C.root
