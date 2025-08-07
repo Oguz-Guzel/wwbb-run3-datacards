@@ -26,8 +26,14 @@ plotIt:
 normSyst:
   lumi:
     val: 1.013
+    group: 
+      - TT
+      - DY
+      - others
 
 shapeSyst:
+  # # Discard unwanted systematics
+  # some_unwanted_syst: discard
   btagSF_shape_cferr1: btagSF_shape_cferr1
   btagSF_shape_lfstats1_2022: btagSF_shape_lfstats1_2022
   btagSF_shape_lfstats1_2022EE: btagSF_shape_lfstats1_2022EE
@@ -86,6 +92,7 @@ histConverter:
     - DL_VBF_boosted_ml_score
   DL_VBF_resolved:
     - DL_VBF_resolved_ml_score
+
 groups:
-  '2022': !include samples_2022.yml
-  '2022EE': !include samples_2022EE.yml
+  "2022": !include samples_2022.yml
+  "2022EE": !include samples_2022EE.yml

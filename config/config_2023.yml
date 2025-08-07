@@ -9,8 +9,8 @@ use_syst: True
 yamlName: plots.yml
 
 era:
-  - '2023'
-  - '2023BPix'
+  - "2023"
+  - "2023BPix"
 
 plotIt:
   legend:
@@ -26,8 +26,14 @@ plotIt:
 normSyst:
   lumi:
     val: 1.013
+    group: 
+      - TT
+      - DY
+      - others
 
 shapeSyst:
+  # # Discard unwanted systematics
+  # some_unwanted_syst: discard
   btagSF_shape_cferr1: btagSF_shape_cferr1
   btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
   btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
