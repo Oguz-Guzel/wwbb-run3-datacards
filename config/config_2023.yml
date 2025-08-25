@@ -1,6 +1,6 @@
-path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.2.4-2023-mvaEval/
+path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/singleTRG-2023/
 
-outputDir: /afs/cern.ch/work/a/aguzel/private/BambooDatacardProducer/wwbb-run3-datacards/output/v1.2.4-2023-mvaEval/
+outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/singleTRG-2023/
 
 use_syst: True
 
@@ -59,7 +59,6 @@ shapeSyst:
   muonIdSF: muonIdSF
   muonIsoSF: muonIsoSF
   muonTrgSF: muonTrgSF
-  pileup: pileup
   ZpT1: ZpT1
   ZpT2: ZpT2
   ZpT3: ZpT3

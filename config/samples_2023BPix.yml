@@ -17,9 +17,9 @@ others:
   fill-color: "#2a2b60"
   legend: "others"
   files:
+    - WtoLNu-2Jets_2023BPix.root
     - WW_2023BPix.root
     - WZ_2023BPix.root
-    - WtoLNu-2Jets_2023BPix.root
     - ZZ_2023BPix.root
     - TbarWplusto2L2Nu_2023BPix.root
     - TWminusto2L2Nu_2023BPix.root
@@ -32,12 +32,12 @@ data_obs:
     - EGamma_Run2023D.root
     - MuonEG_Run2023D.root
 
-ggHH_kl_0_kt_1_hbbhww:
-  type: signal
-  legend: "signal"
-  line-color: 3
-  files:
-    - ggH_bbww_2l2Nu_kl-0p00_kt-1p00_c2-0p00_2023BPix.root
+# ggHH_kl_0_kt_1_hbbhww:
+#   type: signal
+#   legend: "signal"
+#   line-color: 3
+#   files:
+#     - ggH_bbww_2l2Nu_kl-0p00_kt-1p00_c2-0p00_2023BPix.root
 
 ggHH_kl_1_kt_1_hbbhww:
   type: signal
