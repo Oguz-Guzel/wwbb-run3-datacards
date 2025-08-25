@@ -5,8 +5,8 @@
 # https://cms-hh.web.cern.ch/tools/inference/
 
 export DATACARD_DIR=/afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/
-export VERSION=uncalib_noise-2023-full
-export BAMBOO_DIR=$VERSION
+export VERSION=singleTRG-2023
+export BAMBOO_DIR=singleTRG-2023
 
 cd BambooDatacardProducer/inference
 source setup.sh
@@ -39,10 +39,10 @@ cp "$output_path" $DATACARD_DIR'output/'$BAMBOO_DIR'/combined_2023BPix_datacard.
 law run PlotUpperLimitsAtPoint --version $VERSION  --multi-datacards $DATACARD_DIR'output/'$BAMBOO_DIR'/2023_all_combined_datacard.txt' --datacard-names "Combined" --workers 16
 
 # run PlotUpperLimitsAtPoint task
-law run PlotUpperLimitsAtPoint --version $VERSION  --multi-datacards $DATACARD_DIR'output/'$BAMBOO_DIR'/combined_2023_datacard.txt':$DATACARD_DIR'output/'$BAMBOO_DIR'/combined_2023BPix_datacard.txt':$DATACARD_DIR'output/'$BAMBOO_DIR'/2023_all_combined_datacard.txt' --datacard-names "2023","2023BPix","Combined" --workers 16
+law run PlotUpperLimitsAtPoint --version $VERSION  --multi-datacards $DATACARD_DIR'output/'$BAMBOO_DIR'/2023_all_combined_datacard.txt' --datacard-names "2023" --workers 16
 
 # copy the upper limit plot
-output_path=$(law run PlotUpperLimitsAtPoint --version $VERSION  --multi-datacards $DATACARD_DIR'output/'$BAMBOO_DIR'/combined_2023_datacard.txt':$DATACARD_DIR'output/'$BAMBOO_DIR'/combined_2023BPix_datacard.txt':$DATACARD_DIR'output/'$BAMBOO_DIR'/2023_all_combined_datacard.txt' --datacard-names "2023","2023BPix","Combined" --workers 16 --print-out 0 | grep -o 'file://.*' | sed 's|file://||')
+output_path=$(law run PlotUpperLimitsAtPoint --version $VERSION  --multi-datacards $DATACARD_DIR'output/'$BAMBOO_DIR'/2023_all_combined_datacard.txt' --datacard-names "Combined" --workers 16 --print-out 0 | grep -o 'file://.*' | sed 's|file://||')
 
 mkdir -p $DATACARD_DIR'results/'$BAMBOO_DIR'/'
 
