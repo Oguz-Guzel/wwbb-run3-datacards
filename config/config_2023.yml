@@ -29,7 +29,12 @@ normSyst:
     group: 
       - TT
       - DY
-      - others
+      - ST
+      - VV
+      - VJets
+  footer:
+    - "TTbar_norm rateParam * TTbar 1 [0,5]"
+    - "DY_norm rateParam * DY 1 [0,5]"
 
 shapeSyst:
   # # Discard unwanted systematics
