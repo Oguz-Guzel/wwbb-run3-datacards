@@ -104,7 +104,7 @@ ggHH_kl_0_kt_1_hbbhww:
   legend: 'HH_{ggf}^{\kappa_\lambda=0}\rightarrow bbWW'
   line-color: 3
   files:
-    - ggH_bbww_2l2Nu_kl-0p00_kt-1p00_c2-0p00_2023.root
+    - ggH_bbww_2L2Nu_kl-0p00_kt-1p00_c2-0p00_2023.root
 
 
 ggHH_kl_1_kt_1_hbbhww:
