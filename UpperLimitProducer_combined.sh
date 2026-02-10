@@ -106,3 +106,13 @@ law run PlotPostfitSOverB --version $VERSION --datacards $DATACARD_DIR_2022'/202
 output_path=$(law run PlotPostfitSOverB --version $VERSION --datacards $DATACARD_DIR_2022'/2022_all_combined_datacard.txt',$DATACARD_DIR_2023'/2023_all_combined_datacard.txt',$DATACARD_DIR'/output/'$VERSION'/combined_datacard.txt' --print-out 0 | grep -o 'file://.*' | sed 's|file://||')
 
 cp "$output_path" $DATACARD_DIR'results/'$BAMBOO_DIR'/2022_2023_postfit_SoverB.pdf'
+
+
+
+# Likelihoodscan of C2V from -5..5
+law run PlotLikelihoodScan \
+    --version $VERSION \
+    --datacards $DATACARD_DIR_2022'/2022_all_combined_datacard.txt',$DATACARD_DIR_2023'/2023_all_combined_datacard.txt',$DATACARD_DIR'/output/'$VERSION'/combined_datacard.txt' \
+    --pois C2V \
+    --scan-parameters C2V,-2,4 \
+    --LikelihoodScan-workflow htcondor \
