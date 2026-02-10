@@ -328,3 +328,5 @@ if base_plots:
 # Write merged yaml.
 with open(f"{PLOTIT_DIR}/plots_Run3.yml", "w") as f:
     yaml.safe_dump(merged, f)
+
+print(f"Merged plotIt config written to {PLOTIT_DIR}/plots_Run3.yml with {len(merged.get('files', {}))} files and {len(merged.get('plots', {}))} plots.")
