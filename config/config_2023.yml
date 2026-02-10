@@ -1,10 +1,8 @@
-path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/singleTRG-2023/
+path: /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.6-2023-mva
 
-outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/singleTRG-2023/
+outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/v1.4.6-2023-mva
 
 use_syst: True
-
-# textfiles:
 
 yamlName: plots.yml
 
@@ -13,13 +11,43 @@ era:
   - "2023BPix"
 
 plotIt:
+  configuration:
+    width: 800
+    height: 800
+    margin-left: 0.125
+    margin-right: 0.03
+    margin-top: 0.05
+    margin-bottom: 0.1
+    luminosity-label: '%1$.2f fb^{-1} (13.6 TeV)'
+    experiment: " "
+    extra-label: Private work (CMS simulation)
+    luminosity-error: 0.013 # https://twiki.cern.ch/twiki/bin/view/CMS/LumiRecommendationsRun3
+    show-overflow: true
+    error-fill-style: 3154
+    error-fill-color: "#ee556270"
+    ratio-fit-error-fill-style: 1001
+    ratio-fit-error-fill-color: "#aa556270"
+    ratio-fit-line-color: "#0B486B"
+    y-axis-format: "%1% / %2$.2f"
+    blinded-range-fill-style: 1001
+    blinded-range-fill-color: "#29556270"
+    yields-table-align: v
+    yields-table-text-align: l
+    book-keeping-file: plots.root
   legend:
-    position:
-      - 0.2
-      - 0.7
-      - 0.9
-      - 0.9
-    columns: 3
+    position: [0.4, 0.6, 0.9, 0.9]
+  plotdefaults:
+    # y-axis-range: [0.00001, 50000000]
+    normalized: False
+    y-axis: "Events"
+    log-y: both
+    y-axis-show-zero: True
+    save-extensions: [png]
+    show-ratio: True
+    sort-by-yields: True
+    legend-columns: 4
+    ratio-y-axis: "Data / MC"
+    ratio-y-axis-range: [0.8, 1.2]
 
 # combineConfigs:
 
@@ -32,6 +60,7 @@ normSyst:
       - ST
       - VV
       - VJets
+      - other
   footer:
     - "TTbar_norm rateParam * TTbar 1 [0,5]"
     - "DY_norm rateParam * DY 1 [0,5]"
@@ -53,30 +82,23 @@ shapeSyst:
   btagSF_shape_hfstats1_2023BPix: btagSF_shape_hfstats1_2023BPix
   btagSF_shape_hf: btagSF_shape_hf
   btagSF_shape_lf: btagSF_shape_lf
-  jer5: jer5
-  jer4: jer4
-  jer3: jer3
-  jer2: jer2
-  jer1: jer1
   jer0: jer0
+  jer1: jer1
+  jer2: jer2
+  jer3: jer3
+  jer4: jer4
+  jer5: jer5
+  topPtRW: topPtRW
   elIdSF: elIdSF
   elTrgSF: elTrgSF
   muonIdSF: muonIdSF
   muonIsoSF: muonIsoSF
   muonTrgSF: muonTrgSF
-  ZpT1: ZpT1
-  ZpT2: ZpT2
-  ZpT3: ZpT3
-  ZpT4: ZpT4
-  ZpT5: ZpT5
-  ZpT6: ZpT6
-  ZpT7: ZpT7
-  ZpT8: ZpT8
-  ZpT9: ZpT9
-  ZpT10: ZpT10
+  ZpT: ZpT
+  dileptonTRGSF: dileptonTRGSF
 
 quantiles: &quant [0., 0.4, 0.45, 0.5, 0.55, 0.625, 0.75, 0.875, 1.]
-backgrounds: &back [TT, DY, others]
+backgrounds: &back [TT, DY, VV, VJets]
 
 # rebin:
 #   DL_score:
@@ -96,6 +118,7 @@ histConverter:
     - DL_VBF_boosted_ml_score
   DL_VBF_resolved:
     - DL_VBF_resolved_ml_score
+
 groups:
-  '2023': !include samples_2023.yml
-  '2023BPix': !include samples_2023BPix.yml
+  "2023": !include samples_2023.yml
+  "2023BPix": !include samples_2023BPix.yml

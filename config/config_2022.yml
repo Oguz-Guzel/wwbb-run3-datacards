@@ -36,9 +36,9 @@ plotIt:
     yields-table-text-align: l
     book-keeping-file: plots.root
   legend:
-    position: [0.4, 0.65, 0.9, 0.9]
+    position: [0.4, 0.55, 0.9, 0.9]
   plotdefaults:
-    # y-axis-range: [0.00001, 50000000]
+    y-axis-range: [0.00001, 100000000]
     normalized: False
     y-axis: "Events"
     log-y: both
@@ -54,16 +54,32 @@ plotIt:
 
 normSyst:
   lumi:
-    val: 1.013
+    val: 0.014
     group: 
       - TT
       - DY
       - ST
       - VV
       - VJets
+      - other
   footer:
-    - "TTbar_norm rateParam * TTbar 1 [0,5]"
-    - "DY_norm rateParam * DY 1 [0,5]"
+    # --- TTbar: Resolved vs Boosted (Split by Category Name) ---
+    - line: "ttbar_resolved_norm rateParam * TT 1 [0,5]"
+      cat: ".*resolved.*"  # Matches any category with 'resolved' in the name
+    
+    - line: "ttbar_boosted_norm rateParam * TT 1 [0,5]"
+      cat: ".*boosted.*"   # Matches any category with 'boosted' in the name
+
+    # --- Drell-Yan: HF vs LF (Assuming separate Groups) ---
+    # These will float independently across all categories they appear in
+    - "dy_norm rateParam * DY 1 [0,10]"
+    # - "dy_lf_norm rateParam * DY_LF 1 [0,10]"
+
+    # If DY is a single group 'DY' but split by category (e.g. 'DY_HF_bin'):
+    # - line: "dy_hf_norm rateParam * DY 1 [0,10]"
+    #   cat: ".*_HF_.*"
+    # - line: "dy_lf_norm rateParam * DY 1 [0,10]"
+    #   cat: ".*_LF_.*"
 
 shapeSyst:
   # To discard unwanted systematics
@@ -88,27 +104,20 @@ shapeSyst:
   jer3: jer3
   jer4: jer4
   jer5: jer5
+  topPtRW: topPtRW
   elIdSF: elIdSF
   elTrgSF: elTrgSF
   muonIdSF: muonIdSF
   muonIsoSF: muonIsoSF
   muonTrgSF: muonTrgSF
   pileup: pileup
-  ZpT1: ZpT1
-  ZpT2: ZpT2
-  ZpT3: ZpT3
-  ZpT4: ZpT4
-  ZpT5: ZpT5
-  ZpT6: ZpT6
-  ZpT7: ZpT7
-  ZpT8: ZpT8
-  ZpT9: ZpT9
-  ZpT10: ZpT10
+  ZpT: ZpT
+  dileptonTRGSF: dileptonTRGSF
 
 # quantiles :   
 #   - &quant5 [0., 0.6, 0.7, 0.8, 0.9 ,1.]
 #   - &quant3 [0., 0.33, 0.66, 1.]
-# backgrounds: &bkg [TT, DY, others]
+# backgrounds: &bkg [TT, DY, VJets]
 # signal: &signal [ggHH_kl_1_kt_1_hbbhww, ggHH_kl_2p45_kt_1_hbbhww, ggHH_kl_5_kt_1_hbbhww]
 
 # rebin:

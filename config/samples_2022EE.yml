@@ -1,29 +1,95 @@
-TT:
+TTbar:
     type: mc
-    fill-color: "#fff3b0"
-    legend: "TT"
+    legend: "t#bar{t}"
+    fill-color: "#bd1f01"
     files:
       - TTto2L2Nu_2022EE.root
 
 DY:
   type: mc
-  fill-color: "#9e2a2b"
   legend: "DY"
+  fill-color: "#e76300"
   files:
     - DYto2L-2Jets_MLL-50_2022EE.root
     - DYto2L-2Jets_MLL-10to50_2022EE.root
+    - DYto2L-2Jets_MLL-50_0J_2022EE.root
+    - DYto2L-2Jets_MLL-50_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_2J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-100to200_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-100to200_2J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-200to400_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-200to400_2J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-400to600_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-400to600_2J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-40to100_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-40to100_2J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-600_1J_2022EE.root
+    - DYto2L-2Jets_MLL-50_PTLL-600_2J_2022EE.root
 
-others:
+ST:
   type: mc
-  fill-color: "#2a2b60"
-  legend: "others"
+  legend: "ST"
+  fill-color: "#ffa90e"
   files:
-    - WtoLNu-2Jets_2022EE.root
+    - TbarWplusto2L2Nu_2022EE.root
+    - TWminusto2L2Nu_2022EE.root
+    - TBbar_2022EE.root
+    - TBbarQ_2022EE.root
+
+VV:
+  type: mc
+  legend: "VV"
+  fill-color: "#92dadd"
+  files:
     - WW_2022EE.root
     - WZ_2022EE.root
     - ZZ_2022EE.root
-    - TbarWplusto2L2Nu_2022EE.root
-    - TWminusto2L2Nu_2022EE.root
+
+VJets:
+  type: mc
+  legend: "V+jets"
+  fill-color: "#94a4a2"
+  files:
+    - WtoLNu-2Jets_0J_2022EE.root
+    - WtoLNu-2Jets_1J_2022EE.root
+    - WtoLNu-2Jets_2022EE.root
+    - WtoLNu-2Jets_2J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-100to200_1J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-100to200_2J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-200to400_1J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-200to400_2J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-400to600_1J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-400to600_2J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-40to100_1J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-40to100_2J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-600_1J_2022EE.root
+    - WtoLNu-2Jets_PTLNu-600_2J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-100to200_1J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-100to200_2J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-200to400_1J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-200to400_2J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-400to600_1J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-400to600_2J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-40to100_1J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-40to100_2J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-600_1J_2022EE.root
+    - Zto2Nu-2Jets_PTNuNu-600_2J_2022EE.root
+
+other:
+  type: mc
+  legend: "other"
+  fill-color: "#800080"
+  files:
+    - TTLL_2022EE.root
+    - TTZ_2022EE.root
+    - TTTT_2022EE.root
+    - GluGluHto2Wto2L2Nu_2022EE.root
+    - VBFHto2Wto2L2Nu_2022EE.root
+    - WplusH_2022EE.root
+    - ttH_2022EE.root
+    - ZH_2022EE.root
+    - THQ_2022EE.root
+    - THW_2022EE.root
 
 data_obs:
   type: data
@@ -41,42 +107,42 @@ data_obs:
 
 # ggHH_kl_0_kt_1_hbbhww:
 #   type: signal
-#   legend: "signal"
+#   legend: 'HH_{ggf}^{\kappa_\lambda=0}\rightarrow bbWW'
 #   line-color: 3
 #   files:
-#     - ggH_bbww_2l2Nu_kl-0p00_kt-1p00_c2-0p00_2022.root
+#     - ggH_bbww_2l2Nu_kl-0p00_kt-1p00_c2-0p00_2022EE.root
 
 
 ggHH_kl_1_kt_1_hbbhww:
   type: signal
-  legend: "signal"
+  legend: 'HH_{ggF}^{SM}\rightarrow bbWW'
   line-color: 3
   files:
     - ggH_bbww_2L2Nu_kl-1p00_kt-1p00_c2-0p00_2022EE.root
 
 
-ggHH_kl_2p45_kt_1_hbbhww:
-  type: signal
-  legend: "signal"
-  line-color: 4
-  files:
-    - ggH_bbww_2L2Nu_kl-2p45_kt-1p00_c2-0p00_2022EE.root
-
-
-ggHH_kl_5_kt_1_hbbhww:
-  type: signal
-  legend: "signal"
-  line-color: 5
-  files:
-    - ggH_bbww_2L2Nu_kl-5p00_kt-1p00_c2-0p00_2022EE.root
-
-
-# qqHH_CV_1_C2V_1_kl_1_hbbhww:
+# ggHH_kl_2p45_kt_1_hbbhww:
 #   type: signal
-#   legend: "signal"
-#   line-color: 6
+#   legend: 'HH_{ggf}^{\kappa_\lambda=2.45}\rightarrow bbWW'
+#   line-color: 4
 #   files:
-#     - VBF_bbww_2L2Nu_CV_1_C2V_1_C3_1_2022EE.root
+#     - ggH_bbww_2L2Nu_kl-2p45_kt-1p00_c2-0p00_2022EE.root
+
+
+# ggHH_kl_5_kt_1_hbbhww:
+#   type: signal
+#   legend: 'HH_{ggf}^{\kappa_\lambda=5}\rightarrow bbWW'
+#   line-color: 5
+#   files:
+#     - ggH_bbww_2L2Nu_kl-5p00_kt-1p00_c2-0p00_2022EE.root
+
+
+qqHH_CV_1_C2V_1_kl_1_hbbhww:
+  type: signal
+  legend: 'HH_{VBF}^{SM}\rightarrow bbWW'
+  line-color: 6
+  files:
+    - VBF_bbww_2L2Nu_CV_1_C2V_1_C3_1_2022EE.root
 
 # matching processes for vbf_formula:
 #   qqHH_CV_1_C2V_1_kl_1   -> /VBFHHto2B2V_CV_1_C2V_1_C3_1_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer22EENanoAODv12-130X_mcRun3_2022_realistic_postEE_v6-v3/NANOAODSIM
