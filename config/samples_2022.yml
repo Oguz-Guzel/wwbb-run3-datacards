@@ -169,12 +169,12 @@ qqHH_CV_m1p60_C2V_2p72_kl_m1p36_hbbhww:
   files:
     - VBF_bbww_2L2Nu_CV_m1p60_C2V_2p72_C3_m1p36_2022.root
 
-qqHH_CV_m0p012_C2V_0p030_kl_m10p2_hbbhww:
+qqHH_CV_m0p012_C2V_0p030_kl_10p2_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=100 TeV)'
   line-color: 10
   files:
-    - VBF_bbww_2L2Nu_CV_m0p012_C2V_0p030_C3_m10p2_2022.root
+    - VBF_bbww_2L2Nu_CV_m0p012_C2V_0p030_C3_10p2_2022.root
 
 qqHH_CV_m1p21_C2V_1p94_kl_m0p94_hbbhww:
   type: signal
