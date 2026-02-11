@@ -138,61 +138,61 @@ qqHH_CV_1_C2V_1_kl_1_hbbhww:
   files:
     - VBF_bbww_2L2Nu_CV_1_C2V_1_C3_1_2023BPix.root
 
-qqHH_CV_1p74_C2V_1p37_C3_14p4_hbbhww:
+qqHH_CV_1p74_C2V_1p37_kl_14p4_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM5)'
   line-color: 6
   files:
     - VBF_bbww_2L2Nu_CV_1p74_C2V_1p37_C3_14p4_2023BPix.root
 
-qqHH_CV_m0p962_C2V_m0p959_C3_m1p43_hbbhww:
+qqHH_CV_m0p962_C2V_0p959_kl_m1p43_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4)'
   line-color: 7
   files:
-    - VBF_bbww_2L2Nu_CV_m0p962_C2V_m0p959_C3_m1p43_2023BPix.root
+    - VBF_bbww_2L2Nu_CV_m0p962_C2V_0p959_C3_m1p43_2023BPix.root
 
-qqHH_CV_m0p758_C2V_1p44_C3_m19p3_hbbhww:
+qqHH_CV_m0p758_C2V_1p44_kl_m19p3_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=500 GeV)'
   line-color: 8
   files:
     - VBF_bbww_2L2Nu_CV_m0p758_C2V_1p44_C3_m19p3_2023BPix.root
 
-qqHH_CV_m1p60_C2V_m2p72_C3_m1p36_hbbhww:
+qqHH_CV_m1p60_C2V_2p72_kl_m1p36_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=800 GeV)'
   line-color: 9
   files:
-    - VBF_bbww_2L2Nu_CV_m1p60_C2V_m2p72_C3_m1p36_2023BPix.root
+    - VBF_bbww_2L2Nu_CV_m1p60_C2V_2p72_C3_m1p36_2023BPix.root
 
-qqHH_CV_m0p012_C2V_m0p030_C3_m10p2_hbbhww:
+qqHH_CV_m0p012_C2V_0p030_kl_m10p2_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=100 TeV)'
   line-color: 10
   files:
-    - VBF_bbww_2L2Nu_CV_m0p012_C2V_m0p030_C3_m10p2_2023BPix.root
+    - VBF_bbww_2L2Nu_CV_m0p012_C2V_0p030_C3_m10p2_2023BPix.root
 
-qqHH_CV_m1p21_C2V_m1p94_C3_m0p94_hbbhww:
+qqHH_CV_m1p21_C2V_1p94_kl_m0p94_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=200 GeV)'
   line-color: 11
   files:
-    - VBF_bbww_2L2Nu_CV_m1p21_C2V_m1p94_C3_m0p94_2023BPix.root
+    - VBF_bbww_2L2Nu_CV_m1p21_C2V_1p94_C3_m0p94_2023BPix.root
 
-qqHH_CV_m1p83_C2V_m3p57_C3_m3p39_hbbhww:
+qqHH_CV_m1p83_C2V_3p57_kl_m3p39_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=150 GeV)'
   line-color: 12
   files:
-    - VBF_bbww_2L2Nu_CV_m1p83_C2V_m3p57_C3_m3p39_2023BPix.root
+    - VBF_bbww_2L2Nu_CV_m1p83_C2V_3p57_C3_m3p39_2023BPix.root
 
-qqHH_CV_m2p12_C2V_m3p87_C3_m5p96_hbbhww:
-  type: signal
-  legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=120 GeV)'
-  line-color: 13
-  files:
-    - VBF_bbww_2L2Nu_CV_m2p12_C2V_m3p87_C3_m5p96_2023BPix.root
+# qqHH_CV_m2p12_C2V_3p87_kl_m5p96_hbbhww:
+#   type: signal
+#   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=120 GeV)'
+#   line-color: 13
+#   files:
+#     - VBF_bbww_2L2Nu_CV_m2p12_C2V_3p87_C3_m5p96_2023BPix.root
 
 # matching processes for vbf_formula:
 #   qqHH_CV_1_C2V_1_kl_1   -> /VBFHHto2B2V_CV_1_C2V_1_C3_1_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer22EENanoAODv12-130X_mcRun3_2023BPix_realistic_postEE_v6-v3/NANOAODSIM
