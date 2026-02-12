@@ -162,14 +162,14 @@ qqHH_CV_m0p758_C2V_1p44_kl_m19p3_hbbhww:
   files:
     - VBF_bbww_2L2Nu_CV_m0p758_C2V_1p44_C3_m19p3_2022.root
 
-qqHH_CV_m1p60_C2V_2p72_kl_m1p36_hbbhww:
+qqHH_CV_m1p6_C2V_2p72_kl_m1p36_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=800 GeV)'
   line-color: 9
   files:
     - VBF_bbww_2L2Nu_CV_m1p60_C2V_2p72_C3_m1p36_2022.root
 
-qqHH_CV_m0p012_C2V_0p030_kl_10p2_hbbhww:
+qqHH_CV_m0p012_C2V_0p03_kl_10p2_hbbhww:
   type: signal
   legend: 'HH\rightarrow bbWW vbf (MCHM4 with f=100 TeV)'
   line-color: 10
