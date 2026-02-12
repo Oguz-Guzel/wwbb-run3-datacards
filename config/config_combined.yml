@@ -93,11 +93,10 @@ shapeSyst:
   btagSF_shape_lfstats1_2022EE: btagSF_shape_lfstats1_2022EE
   btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
   btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
-  pileup: pileup
   btagSF_shape_hfstats2_2022: btagSF_shape_hfstats2_2022
   btagSF_shape_hfstats2_2022EE: btagSF_shape_hfstats2_2022EE
-  btagSF_shape_hfstats2_2023: btagSF_shape_lfstats2_2023
-  btagSF_shape_hfstats2_2023BPix: btagSF_shape_lfstats2_2023BPix
+  btagSF_shape_hfstats2_2023: btagSF_shape_hfstats2_2023
+  btagSF_shape_hfstats2_2023BPix: btagSF_shape_hfstats2_2023BPix
   btagSF_shape_lfstats2_2022: btagSF_shape_lfstats2_2022
   btagSF_shape_lfstats2_2022EE: btagSF_shape_lfstats2_2022EE
   btagSF_shape_lfstats2_2023: btagSF_shape_lfstats2_2023
