@@ -1,0 +1,322 @@
+path:
+  "2022":
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2022
+  "2022EE":
+    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2022EE
+  "2023":
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2023
+  "2023BPix":
+    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2023BPix
+
+outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/SR_v1.4.7_noRebinning_v1
+
+use_syst: True
+
+# textfiles:
+
+yamlName: plots.yml
+
+era:
+  - "2022"
+  - "2022EE"
+  - "2023"
+  - "2023BPix"
+
+plotIt:
+  # unitary_bin_width: true
+  # plotdefaults:
+    # y-axis: "Events / Unit Score"
+  configuration:
+    width: 800
+    height: 800
+    margin-left: 0.125
+    margin-right: 0.03
+    margin-top: 0.05
+    margin-bottom: 0.1
+    luminosity-label: '%1$.2f fb^{-1} (13.6 TeV)'
+    experiment: "CMS"
+    extra-label: Work in Progress
+    luminosity-error: 0.0135 # https://twiki.cern.ch/twiki/bin/view/CMS/LumiRecommendationsRun3
+    show-overflow: true
+    error-fill-style: 3154
+    error-fill-color: "#ee556270"
+    ratio-fit-error-fill-style: 1001
+    ratio-fit-error-fill-color: "#aa556270"
+    ratio-fit-line-color: "#0B486B"
+    y-axis-format: "%1% / %2$.2f"
+    blinded-range-fill-style: 1001
+    blinded-range-fill-color: "#29556270"
+    yields-table-align: v
+    yields-table-text-align: l
+    book-keeping-file: plots.root
+  plotdefaults:
+    y-axis-range: [0.00001, 100000000]
+    normalized: False
+    y-axis: "Events"
+    log-y: both
+    y-axis-show-zero: True
+    save-extensions: [png]
+    show-ratio: True
+    sort-by-yields: True
+    legend-columns: 4
+    ratio-y-axis: "Data / MC"
+    ratio-y-axis-range: [0.8, 1.2]
+  legend:
+    # position: [0.4, 0.55, 0.9, 0.9]
+    position:
+      - 0.2
+      - 0.7
+      - 0.9
+      - 0.9
+    columns: 3
+
+# combineConfigs:
+
+normSyst:
+  lumi:
+    val: 1.0135
+    group: 
+      - TT
+      - DY
+      - ST
+      - VV
+      - VJets
+      - other
+  footer:
+    - "TTbar_norm rateParam * TTbar 1 [0,5]"
+    - "DY_norm rateParam * DY 1 [0,5]"
+
+shapeSyst:
+  btagSF_shape_cferr1: btagSF_shape_cferr1
+  btagSF_shape_lfstats1_2022: btagSF_shape_lfstats1_2022
+  btagSF_shape_lfstats1_2022EE: btagSF_shape_lfstats1_2022EE
+  btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
+  btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
+  btagSF_shape_hfstats2_2022: btagSF_shape_hfstats2_2022
+  btagSF_shape_hfstats2_2022EE: btagSF_shape_hfstats2_2022EE
+  btagSF_shape_hfstats2_2023: btagSF_shape_hfstats2_2023
+  btagSF_shape_hfstats2_2023BPix: btagSF_shape_hfstats2_2023BPix
+  btagSF_shape_lfstats2_2022: btagSF_shape_lfstats2_2022
+  btagSF_shape_lfstats2_2022EE: btagSF_shape_lfstats2_2022EE
+  btagSF_shape_lfstats2_2023: btagSF_shape_lfstats2_2023
+  btagSF_shape_lfstats2_2023BPix: btagSF_shape_lfstats2_2023BPix
+  btagSF_shape_cferr2: btagSF_shape_cferr2
+  jesTotal: discard
+  btagSF_shape_hfstats1_2022: btagSF_shape_hfstats1_2022
+  btagSF_shape_hfstats1_2022EE: btagSF_shape_hfstats1_2022EE
+  btagSF_shape_hfstats1_2023: btagSF_shape_hfstats1_2023
+  btagSF_shape_hfstats1_2023BPix: btagSF_shape_hfstats1_2023BPix
+  btagSF_shape_hf: btagSF_shape_hf
+  btagSF_shape_lf: btagSF_shape_lf
+  jer0: jer0_{era}
+  jer1: jer1_{era}
+  jer2: jer2_{era}
+  jer3: jer3_{era}
+  jer4: jer4_{era}
+  jer5: jer5_{era}
+  topPtRW: topPtRW
+  elIdSF: elIdSF_{era}
+  elTrgSF: elTrgSF_{era}
+  muonIdSF: muonIdSF_{era}
+  muonIsoSF: muonIsoSF_{era}
+  muonTrgSF: muonTrgSF_{era}
+  pileup: pileup
+  ZpT: ZpT
+  dileptonTRGSF: dileptonTRGSF_{era}
+  QCDscale_ttbar: QCDscale_ttbar
+  QCDscale_V: QCDscale_V
+  QCDscale_VV: QCDscale_VV
+  QCDscale_ggH: QCDscale_ggH
+  QCDscale_qqH: QCDscale_qqH
+  QCDscale_VH: QCDscale_VH
+  QCDscale_ttH: QCDscale_ttH
+  PDFalphaS_gq: PDFalphaS_gq
+  PDFalphaS_gg: PDFalphaS_gg
+  PDFalphaS_qq: PDFalphaS_qq
+  PDFalphaS_ggH: PDFalphaS_ggH
+  PDFalphaS_qqH: PDFalphaS_qqH
+  PDFalphaS_VH: PDFalphaS_VH
+  PDFalphaS_ttH: PDFalphaS_ttH
+  muRF_ttbar: muRF_ttbar
+  muRF_DY: muRF_DY
+  muRF_ST: muRF_ST
+  muRF_VV: muRF_VV
+  muRF_ttV: muRF_ttV
+  muRF_singleH: muRF_singleH
+  muRF_bbWW: muRF_bbWW
+  pdfShape_ttbar: pdfShape_ttbar
+  pdfShape_DY: pdfShape_DY
+  pdfShape_ST: pdfShape_ST
+  pdfShape_VV: pdfShape_VV
+  pdfShape_ttV: pdfShape_ttV
+  pdfShape_singleH: pdfShape_singleH
+  pdfShape_bbWW: pdfShape_bbWW
+  psISR: psISR
+  psFSR_ttbar: psFSR_ttbar
+  psFSR_DY: psFSR_DY
+  psFSR_ST: psFSR_ST
+  psFSR_VV: psFSR_VV
+  psFSR_ttV: psFSR_ttV
+  psFSR_singleH: psFSR_singleH
+  ak8BBCC: ak8BBCC_{era}
+  ak8BBCC_tau21: ak8BBCC_tau21_{era}
+  ak8BBCC_msd: ak8BBCC_msd_{era}
+
+thresholds_10: &thr10 [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
+thresholds_8: &thr8 [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0]
+thresholds_3: &thr3 [1.0, 4.0, 9.0]
+thresholds_4: &thr4 [1.0, 4.0, 9.0, 16.0]
+thresholds_1: &thr1 [1.0]
+
+backgrounds: &backgrounds [TTbar, DY, ST, VV, VJets, other]
+
+quantiles_10: &q10 [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+quantiles_8: &q8 [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+quantiles_4: &q4 [0.0, 0.25, 0.5, 0.75, 1.0]
+quantiles_3: &q3 [0.0, 0.333333, 0.666667, 1.0]
+quantiles_1: &q1 [0.0, 1.0]
+
+# rebin:
+#   SR_boosted:
+#     method: threshold2
+#     params: [*thr3, *backgrounds]
+#   SR_resolved1b:
+#     method: threshold2
+#     params: [*thr10, *backgrounds]
+#   SR_resolved2b:
+#     method: threshold2
+#     params: [*thr8, *backgrounds]
+#   SR_VBF_boosted:
+#     method: threshold2
+#     params: [*thr1, *backgrounds]
+#   SR_VBF_resolved:
+#     method: threshold2
+#     params: [*thr4, *backgrounds]
+
+# rebin:
+#   SR_boosted:
+#     method: half
+#     params: []
+#   SR_resolved1b:
+#     method: half
+#     params: []
+#   SR_resolved2b:
+#     method: half
+#     params: []
+#   SR_VBF_boosted:
+#     method: half
+#     params: []
+#   SR_VBF_resolved:
+#     method: half
+#     params: []
+
+rebin:
+  SR_GGF_boosted:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+  SR_GGF_resolved1b:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_resolved2b:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_boosted_ee:
+    method: threshold2
+    params: [*thr3, *backgrounds, 1]
+  SR_GGF_boosted_mumu:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+  SR_GGF_boosted_emu:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+  SR_GGF_1b_ee:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_1b_mumu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_1b_emu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_2b_ee:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_2b_mumu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_GGF_2b_emu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_VBF_boosted:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+  SR_VBF_resolved:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_VBF_resolved_ee:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_VBF_resolved_mumu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_VBF_resolved_emu:
+    method: threshold2
+    params: [*thr4, *backgrounds, 3]
+  SR_VBF_boosted_ee:
+    method: threshold2
+    params: [*thr1, *backgrounds, 0.5]
+  SR_VBF_boosted_mumu:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+  SR_VBF_boosted_emu:
+    method: threshold2
+    params: [*thr3, *backgrounds, 3]
+#histCorrections:
+
+histConverter:
+  SR_GGF_boosted:
+    - DL_boosted_ml_score
+  SR_GGF_resolved1b:
+    - DL_resolved1b_ml_score
+  SR_GGF_resolved2b:
+    - DL_resolved2b_ml_score
+  SR_VBF_boosted:
+    - DL_VBF_boosted_ml_score
+  SR_VBF_resolved:
+    - DL_VBF_resolved_ml_score
+  SR_GGF_1b_ee:
+    - ml_score_1b_ee
+  SR_GGF_1b_mumu:
+    - ml_score_1b_mumu
+  SR_GGF_1b_emu:
+    - ml_score_1b_emu
+  SR_GGF_2b_ee:
+    - ml_score_2b_ee
+  SR_GGF_2b_mumu:
+    - ml_score_2b_mumu
+  SR_GGF_2b_emu:
+    - ml_score_2b_emu
+  SR_GGF_boosted_ee:
+    - ml_score_boosted_ee
+  SR_GGF_boosted_mumu:
+    - ml_score_boosted_mumu
+  SR_GGF_boosted_emu:
+    - ml_score_boosted_emu
+  SR_VBF_boosted_ee:
+    - ml_score_VBF_boosted_ee
+  SR_VBF_boosted_mumu:
+    - ml_score_VBF_boosted_mumu
+  SR_VBF_boosted_emu:
+    - ml_score_VBF_boosted_emu
+  SR_VBF_resolved_ee:
+    - ml_score_VBF_resolved_ee
+  SR_VBF_resolved_mumu:
+    - ml_score_VBF_resolved_mumu
+  SR_VBF_resolved_emu:
+    - ml_score_VBF_resolved_emu
+    
+groups:
+  '2022': !include samples_2022.yml
+  '2022EE': !include samples_2022EE.yml
+  '2023': !include samples_2023.yml
+  '2023BPix': !include samples_2023BPix.yml
