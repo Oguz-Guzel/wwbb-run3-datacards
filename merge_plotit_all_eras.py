@@ -1,3 +1,4 @@
+import argparse
 import os
 from array import array
 
@@ -12,16 +13,34 @@ except Exception as exc:
 
 ERAS = ["2022", "2022EE", "2023", "2023BPix"]
 RUN3_ERA = "Run3"
-PLOTIT_DIR = "/afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/v1.4.7/plotit"
+def _parse_args():
+    parser = argparse.ArgumentParser(
+        description="Merge plotIt YAMLs and ROOT files across eras into a Run3 configuration."
+    )
+    parser.add_argument(
+        "PLOTIT_DIR",
+        help="Path to the plotIt directory containing plots_<ERA>.yml and root/",
+    )
+    parser.add_argument(
+        "PLOT_PREFIX",
+        help="Prefix for plot/histogram names (e.g. SR, DY, TT).",
+    )
+    return parser.parse_args()
+
+
+_args = _parse_args()
+PLOTIT_DIR = os.path.abspath(_args.PLOTIT_DIR)
+PLOT_PREFIX = _args.PLOT_PREFIX.rstrip("_")
+PLOT_NAME_PREFIX = f"{PLOT_PREFIX}_"
 ROOT_DIR = os.path.join(PLOTIT_DIR, "root")
 
 GGF_PREFIX = "ggHH_kl_1_kt_1_hbbhww_"
 VBF_PREFIX = "qqHH_CV_1_C2V_1_kl_1_hbbhww_"
-COMBINED_HIST = "DL_combined"
+COMBINED_HIST = f"{PLOT_NAME_PREFIX}combined"
 COMBINED_CATEGORIES = [
-    ("Resolved 1b", "DL_resolved1b"),
-    ("Resolved 2b", "DL_resolved2b"),
-    ("Boosted", "DL_boosted"),
+    ("Resolved 1b", f"{PLOT_NAME_PREFIX}resolved1b"),
+    ("Resolved 2b", f"{PLOT_NAME_PREFIX}resolved2b"),
+    ("Boosted", f"{PLOT_NAME_PREFIX}boosted"),
 ]
 COMBINED_BIN_UNIT = 1.0  # width assigned to each original bin when concatenating
 COMBINED_X_TITLE_OFFSET = 12.4  # move x-axis title downward (ROOT offset >1 goes farther)
@@ -38,8 +57,16 @@ for era in ERAS:
 # Merge them into a single config.
 merged = Datacard.merge_plotIt(configs)
 
-# Use plotIt configuration from the conbined config file.
-COMBINED_CONFIG_PATH = "/afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/config/config_combined.yml"
+# Use plotIt configuration from the combined config file.
+COMBINED_CONFIG_PATH = "/afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/config/config_combined_sr.yml"
+
+
+def strip_blinding(cfg):
+    """Remove any keys related to blinding from a plotIt configuration mapping."""
+
+    for key in list(cfg.keys()):
+        if "blinded" in key:
+            cfg.pop(key, None)
 
 class YamlIncludeSafeLoader(yaml.SafeLoader):
     pass
@@ -61,10 +88,12 @@ if "legend" in combined_plotit:
     merged["legend"] = combined_plotit["legend"]
 if "plotdefaults" in combined_plotit:
     merged["plotdefaults"] = combined_plotit["plotdefaults"]
+strip_blinding(merged.get("plotdefaults", {}))
 
 # Force a single Run3 era so plotIt sums files across eras.
 merged.setdefault("configuration", {})
 merged["configuration"]["eras"] = [RUN3_ERA]
+strip_blinding(merged["configuration"])
 
 # Sum lumi across eras and store under Run3. Keep the per-era map so we can
 # rescale files back to their original era luminosity after forcing a single
@@ -195,6 +224,7 @@ merged["groups"].update({
 # Ensure each plot uses the Run3 era.
 for plot_cfg in merged.get("plots", {}).values():
     plot_cfg["era"] = RUN3_ERA
+    strip_blinding(plot_cfg)
 
 
 COMBINED_TOTAL_WIDTH = None
@@ -308,12 +338,14 @@ for root_fname in list(merged.get("files", {}).keys()):
 # Add a single plot entry that shows resolved 1b / resolved 2b / boosted on the
 # same x-axis using the concatenated histogram created above.
 plots = merged.setdefault("plots", {})
-base_plots = [plots[name] for name in ("DL_resolved1b", "DL_resolved2b", "DL_boosted") if name in plots]
+base_plot_names = tuple(cat_name for _, cat_name in COMBINED_CATEGORIES)
+base_plots = [plots[name] for name in base_plot_names if name in plots]
 if base_plots:
     max_lin = max(cfg.get("y-axis-range", [0.0, 0.0])[1] for cfg in base_plots if "y-axis-range" in cfg)
     max_log = max(cfg.get("log-y-axis-range", [0.0, 0.0])[1] for cfg in base_plots if "log-y-axis-range" in cfg)
     combined_cfg = dict(base_plots[0])
     combined_cfg.pop("blinded-range", None)
+    strip_blinding(combined_cfg)
     combined_cfg["x-axis"] = "DL score (resolved1b | resolved2b | boosted)"
     x_max = COMBINED_TOTAL_WIDTH if COMBINED_TOTAL_WIDTH is not None else 3.0
     combined_cfg["x-axis-range"] = [0.0, x_max]
