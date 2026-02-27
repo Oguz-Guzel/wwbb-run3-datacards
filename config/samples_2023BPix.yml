@@ -1,9 +1,9 @@
 TTbar:
-    type: mc
-    legend: "t#bar{t}"
-    fill-color: "#bd1f01"
-    files:
-      - TTto2L2Nu_2023BPix.root
+  type: mc
+  legend: "t#bar{t}"
+  fill-color: "#bd1f01"
+  files:
+    - TTto2L2Nu_2023BPix.root
 
 DY:
   type: mc
@@ -26,28 +26,25 @@ DY:
     - DYto2L-2Jets_MLL-50_PTLL-600_1J_2023BPix.root
     - DYto2L-2Jets_MLL-50_PTLL-600_2J_2023BPix.root
 
-ST:
+ST_tW:
   type: mc
-  legend: "ST"
+  legend: "tW"
   fill-color: "#ffa90e"
   files:
     - TbarWplusto2L2Nu_2023BPix.root
     - TWminusto2L2Nu_2023BPix.root
+
+ST_tchan:
+  type: mc
+  legend: "t-ch ST"
+  fill-color: "#ffb83d"
+  files:
     - TBbar_2023BPix.root
     - TBbarQ_2023BPix.root
 
-VV:
+WJets:
   type: mc
-  legend: "VV"
-  fill-color: "#92dadd"
-  files:
-    - WW_2023BPix.root
-    - WZ_2023BPix.root
-    - ZZ_2023BPix.root
-
-VJets:
-  type: mc
-  legend: "V+jets"
+  legend: "W+jets"
   fill-color: "#94a4a2"
   files:
     - WtoLNu-2Jets_0J_2023BPix.root
@@ -64,6 +61,12 @@ VJets:
     - WtoLNu-2Jets_PTLNu-40to100_2J_2023BPix.root
     - WtoLNu-2Jets_PTLNu-600_1J_2023BPix.root
     - WtoLNu-2Jets_PTLNu-600_2J_2023BPix.root
+
+ZJets:
+  type: mc
+  legend: "Z+jets"
+  fill-color: "#869695"
+  files:
     - Zto2Nu-2Jets_PTNuNu-100to200_1J_2023BPix.root
     - Zto2Nu-2Jets_PTNuNu-100to200_2J_2023BPix.root
     - Zto2Nu-2Jets_PTNuNu-200to400_1J_2023BPix.root
@@ -75,20 +78,89 @@ VJets:
     - Zto2Nu-2Jets_PTNuNu-600_1J_2023BPix.root
     - Zto2Nu-2Jets_PTNuNu-600_2J_2023BPix.root
 
-other:
+WW:
   type: mc
-  legend: "other"
-  fill-color: "#800080"
+  legend: "WW"
+  fill-color: "#92dadd"
+  files:
+    - WW_2023BPix.root
+
+WZ:
+  type: mc
+  legend: "WZ"
+  fill-color: "#63cdd1"
+  files:
+    - WZ_2023BPix.root
+
+ZZ:
+  type: mc
+  legend: "ZZ"
+  fill-color: "#5fb0b5"
+  files:
+    - ZZ_2023BPix.root
+
+ttZ:
+  type: mc
+  legend: "t#bar{t}Z/LL"
+  fill-color: "#b070c8"
   files:
     - TTLL_2023BPix.root
     - TTZ_2023BPix.root
+
+tttt:
+  type: mc
+  legend: "t#bar{t}t#bar{t}"
+  fill-color: "#8d5ba6"
+  files:
     - TTTT_2023BPix.root
+
+ggH:
+  type: mc
+  legend: "ggH"
+  fill-color: "#f2d6ff"
+  files:
     - GluGluHto2Wto2L2Nu_2023BPix.root
+
+VBFH:
+  type: mc
+  legend: "VBFH"
+  fill-color: "#d5c5ff"
+  files:
     - VBFHto2Wto2L2Nu_2023BPix.root
+
+WH:
+  type: mc
+  legend: "WH"
+  fill-color: "#c2b0f2"
+  files:
     - WplusH_2023BPix.root
-    - ttH_2023BPix.root
+
+ZH:
+  type: mc
+  legend: "ZH"
+  fill-color: "#a898d8"
+  files:
     - ZH_2023BPix.root
+
+ttH:
+  type: mc
+  legend: "ttH"
+  fill-color: "#927fbe"
+  files:
+    - ttH_2023BPix.root
+
+tHq:
+  type: mc
+  legend: "tHq"
+  fill-color: "#a5b6e0"
+  files:
     - THQ_2023BPix.root
+
+tHW:
+  type: mc
+  legend: "tHW"
+  fill-color: "#8aa1cf"
+  files:
     - THW_2023BPix.root
 
 data_obs:
