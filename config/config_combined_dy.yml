@@ -1,12 +1,12 @@
 path:
   "2022":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/DY_2022
+    - /eos/user/a/aguzel/bamboo-output/CRs_v1.4.7/DY_2022
   "2022EE":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/DY_2022EE
+    - /eos/user/a/aguzel/bamboo-output/CRs_v1.4.7/DY_2022EE
   "2023":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/DY_2023
+    - /eos/user/a/aguzel/bamboo-output/CRs_v1.4.7/DY_2023
   "2023BPix":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/DY_2023BPix
+    - /eos/user/a/aguzel/bamboo-output/CRs_v1.4.7/DY_2023BPix
 
 outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/CR_DY_v1.4.7_v3
 
