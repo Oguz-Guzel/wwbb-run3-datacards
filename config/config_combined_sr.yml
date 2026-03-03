@@ -220,22 +220,6 @@ shapeSyst:
     ak8BBCC_msd_{era}_ggf: {cat: '^SR_GGF_boosted.*'}
     ak8BBCC_msd_{era}_vbf: {cat: '^SR_VBF_boosted.*'}
     ak8BBCC_msd_{era}_cr:  {cat: '^(?!SR_GGF_boosted)(?!SR_VBF_boosted).*boosted.*'}
-  # the followings are actually rate systematics, accidentally implemented as shape systematics in bamboo; they should be removed.
-  QCDscale_ttbar: discard
-  QCDscale_V: discard
-  QCDscale_VV: discard
-  QCDscale_ggH: discard
-  QCDscale_qqH: discard
-  QCDscale_VH: discard
-  QCDscale_ttH: discard
-  PDFalphaS_gq: discard
-  PDFalphaS_gg: discard
-  PDFalphaS_qq: discard
-  PDFalphaS_ggH: discard
-  PDFalphaS_qqH: discard
-  PDFalphaS_VH: discard
-  PDFalphaS_ttH: discard
-
 thresholds_10: &thr10 [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0, 100.0]
 thresholds_8: &thr8 [1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0]
 thresholds_3: &thr3 [1.0, 4.0, 9.0]
