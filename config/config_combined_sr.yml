@@ -36,7 +36,7 @@ plotIt:
     luminosity-label: '%1$.2f fb^{-1} (13.6 TeV)'
     experiment: "CMS"
     extra-label: Work in Progress
-    luminosity-error: 0.0135 # https://twiki.cern.ch/twiki/bin/view/CMS/LumiRecommendationsRun3
+    luminosity-error: 0.000001 #doesn't affect the plot, just for drawing the shaded band around the lumi label
     show-overflow: true
     error-fill-style: 3154
     error-fill-color: "#ee556270"
