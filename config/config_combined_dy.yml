@@ -185,19 +185,19 @@ shapeSyst:
 rebin:
   DY_boosted:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   DY_resolved1b:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   DY_resolved2b:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   DY_VBF_boosted:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   DY_VBF_resolved:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
 
 histConverter:
   DY_boosted:

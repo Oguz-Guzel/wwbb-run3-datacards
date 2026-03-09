@@ -185,19 +185,19 @@ shapeSyst:
 rebin:
   TT_boosted:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   TT_resolved1b:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   TT_resolved2b:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   TT_VBF_boosted:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
   TT_VBF_resolved:
     method: boundary
-    params: [[0.0, 1.0]]
+    params: [[0.0, 2.0]]
 
 histConverter:
   TT_boosted:
