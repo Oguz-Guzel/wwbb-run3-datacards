@@ -1,14 +1,14 @@
 path:
   "2022":
-   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2022
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.8_2022
   "2022EE":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2022EE
+    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.8_2022EE
   "2023":
-   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2023
+   - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.8_2023
   "2023BPix":
-    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/SR_2023BPix
+    - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.8_2023BPix
 
-outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/SR_v1.4.7_noRebinning_v1
+outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/SR_v1.4.8_adaptiveBinning_v6
 
 use_syst: True
 
