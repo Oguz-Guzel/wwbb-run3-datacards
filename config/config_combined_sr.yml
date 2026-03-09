@@ -145,7 +145,7 @@ normSyst:
     - {val: [1.0125, 0.9875], group: [ggHH_kl_0_kt_1_hbbhww, ggHH_kl_1_kt_1_hbbhww, ggHH_kl_2p45_kt_1_hbbhww, ggHH_kl_5_kt_1_hbbhww, qqHH_CV_1_C2V_1_kl_1_hbbhww, qqHH_CV_1p74_C2V_1p37_kl_14p4_hbbhww, qqHH_CV_m0p962_C2V_0p959_kl_m1p43_hbbhww, qqHH_CV_m0p758_C2V_1p44_kl_m19p3_hbbhww, qqHH_CV_m1p6_C2V_2p72_kl_m1p36_hbbhww, qqHH_CV_m0p012_C2V_0p03_kl_10p2_hbbhww, qqHH_CV_m1p21_C2V_1p94_kl_m0p94_hbbhww, qqHH_CV_m1p83_C2V_3p57_kl_m3p39_hbbhww]}
   footer:
     - "rate_ttbar rateParam * TTbar 1 [0,5]"
-    - "rate_dy rateParam * DY 1 [0,5]"
+    - "rate_dy_ggf rateParam * DY 1 [0,5]" # later changed to rate_dy_vbf in the inference script for VBF cards
 
 shapeSyst:
   btagSF_shape_hf: btag_fullShape_hf_{era}
