@@ -65,123 +65,171 @@ plotIt:
     columns: 3
 
 normSyst:
-  lumi_2022:
-    val: 1.014
-    group:
+  lumi_13p6TeV_2022:
+    val: 0.014
+    eras:
+      - 2022
+      - 2022EE
+    group: 
       - TT
       - DY
       - ST
       - VV
       - VJets
       - other
-  lumi_2022EE:
-    val: 1.014
-    group:
+  lumi_13p6TeV_2023:
+    val: 0.013
+    eras:
+      - 2023
+      - 2023BPix
+    group: 
       - TT
       - DY
       - ST
       - VV
       - VJets
       - other
-  lumi_2023:
-    val: 1.013
-    group:
-      - TT
-      - DY
-      - ST
-      - VV
-      - VJets
-      - other
-  lumi_2023BPix:
-    val: 1.013
-    group:
-      - TT
-      - DY
-      - ST
-      - VV
-      - VJets
-      - other
+  QCDscale_ttbar: # not ttbar – ttbar and DY rates are free parameters, see the group names below and footer
+    - {val: [1.023, 0.978], group: [ST_tW]}
+    - {val: [1.011, 0.992], group: [ST_tchan]}
+    - {val: [1.086, 0.905], group: [ttZ]}
+    - {val: [1.082, 0.825], group: [tttt]}
+  QCDscale_V:
+    - {val: [1.012, 0.987], group: [WJets]}
+  QCDscale_VV:
+    - {val: [1.025, 0.978], group: [WW]}
+    - {val: [1.041, 0.968], group: [WZ]}
+    - {val: [1.029, 0.973], group: [ZZ]}
+  QCDscale_ggH:
+    - {val: [1.046, 0.933], group: [ggH]}
+  QCDscale_qqH:
+    - {val: [1.005, 0.997], group: [VBFH]}
+  QCDscale_VH:
+    - {val: [1.004, 0.993], group: [WH]}
+    - {val: [1.037, 0.968], group: [ZH]}
+  QCDscale_ttH:
+    - {val: [1.060, 0.907], group: [ttH]}
+    - {val: [1.065, 0.852], group: [tHq]}
+    - {val: [1.050, 0.932], group: [tHW]}
+  pdf_gq:
+    - {val: [1.027, 0.973], group: [ST_tW]}
+  pdf_gg:
+    - {val: [1.067, 0.933], group: [tttt]}
+    - {val: [1.035, 0.965], group: [ttZ]}
+  pdf_qq:
+    - {val: [1.015, 0.991], group: [ST_tchan]}
+    - {val: [1.007, 0.993], group: [WJets]}
+  pdf_ggH:
+    - {val: [1.032, 0.968], group: [ggH]}
+  pdf_qqH:
+    - {val: [1.021, 0.979], group: [VBFH]}
+  pdf_VH:
+    - {val: [1.018, 0.982], group: [WH]}
+    - {val: [1.016, 0.984], group: [ZH]}
+  pdf_ttH:
+    - {val: [1.035, 0.965], group: [ttH]}
+    - {val: [1.037, 0.963], group: [tHq]}
+    - {val: [1.063, 0.937], group: [tHW]}
+  BR_hww: # convenience to avoid one very long mixed list of groups
+    - {val: [1.0152, 0.9848], group: [ggH, VBFH, WH, ZH, ttH, tHq, tHW]}
+    - {val: [1.0152, 0.9848], group: [ggHH_kl_0_kt_1_hbbhww, ggHH_kl_1_kt_1_hbbhww, ggHH_kl_2p45_kt_1_hbbhww, ggHH_kl_5_kt_1_hbbhww, qqHH_CV_1_C2V_1_kl_1_hbbhww, qqHH_CV_1p74_C2V_1p37_kl_14p4_hbbhww, qqHH_CV_m0p962_C2V_0p959_kl_m1p43_hbbhww, qqHH_CV_m0p758_C2V_1p44_kl_m19p3_hbbhww, qqHH_CV_m1p6_C2V_2p72_kl_m1p36_hbbhww, qqHH_CV_m0p012_C2V_0p03_kl_10p2_hbbhww, qqHH_CV_m1p21_C2V_1p94_kl_m0p94_hbbhww, qqHH_CV_m1p83_C2V_3p57_kl_m3p39_hbbhww]}
+  BR_hbb:
+    - {val: [1.0125, 0.9875], group: [ggHH_kl_0_kt_1_hbbhww, ggHH_kl_1_kt_1_hbbhww, ggHH_kl_2p45_kt_1_hbbhww, ggHH_kl_5_kt_1_hbbhww, qqHH_CV_1_C2V_1_kl_1_hbbhww, qqHH_CV_1p74_C2V_1p37_kl_14p4_hbbhww, qqHH_CV_m0p962_C2V_0p959_kl_m1p43_hbbhww, qqHH_CV_m0p758_C2V_1p44_kl_m19p3_hbbhww, qqHH_CV_m1p6_C2V_2p72_kl_m1p36_hbbhww, qqHH_CV_m0p012_C2V_0p03_kl_10p2_hbbhww, qqHH_CV_m1p21_C2V_1p94_kl_m0p94_hbbhww, qqHH_CV_m1p83_C2V_3p57_kl_m3p39_hbbhww]}
   footer:
     - "TTbar_norm rateParam * TTbar 1 [0,5]"
     - "DY_norm rateParam * DY 1 [0,5]"
 
 
 shapeSyst:
-  btagSF_shape_cferr1: btagSF_shape_cferr1
-  btagSF_shape_lfstats1_2022: btagSF_shape_lfstats1_2022
-  btagSF_shape_lfstats1_2022EE: btagSF_shape_lfstats1_2022EE
-  btagSF_shape_lfstats1_2023: btagSF_shape_lfstats1_2023
-  btagSF_shape_lfstats1_2023BPix: btagSF_shape_lfstats1_2023BPix
-  btagSF_shape_hfstats2_2022: btagSF_shape_hfstats2_2022
-  btagSF_shape_hfstats2_2022EE: btagSF_shape_hfstats2_2022EE
-  btagSF_shape_hfstats2_2023: btagSF_shape_hfstats2_2023
-  btagSF_shape_hfstats2_2023BPix: btagSF_shape_hfstats2_2023BPix
-  btagSF_shape_lfstats2_2022: btagSF_shape_lfstats2_2022
-  btagSF_shape_lfstats2_2022EE: btagSF_shape_lfstats2_2022EE
-  btagSF_shape_lfstats2_2023: btagSF_shape_lfstats2_2023
-  btagSF_shape_lfstats2_2023BPix: btagSF_shape_lfstats2_2023BPix
-  btagSF_shape_cferr2: btagSF_shape_cferr2
-  jesTotal: discard
-  btagSF_shape_hfstats1_2022: btagSF_shape_hfstats1_2022
-  btagSF_shape_hfstats1_2022EE: btagSF_shape_hfstats1_2022EE
-  btagSF_shape_hfstats1_2023: btagSF_shape_hfstats1_2023
-  btagSF_shape_hfstats1_2023BPix: btagSF_shape_hfstats1_2023BPix
-  btagSF_shape_hf: btagSF_shape_hf
-  btagSF_shape_lf: btagSF_shape_lf
-  jer0: jer0_{era}
-  jer1: jer1_{era}
-  jer2: jer2_{era}
-  jer3: jer3_{era}
-  jer4: jer4_{era}
-  jer5: jer5_{era}
-  topPtRW: topPtRW
-  elIdSF: elIdSF_{era}
-  elTrgSF: elTrgSF_{era}
-  muonIdSF: muonIdSF_{era}
-  muonIsoSF: muonIsoSF_{era}
-  muonTrgSF: muonTrgSF_{era}
-  pileup: pileup
-  ZpT: ZpT
-  dileptonTRGSF: dileptonTRGSF_{era}
-  QCDscale_ttbar: QCDscale_ttbar
-  QCDscale_V: QCDscale_V
-  QCDscale_VV: QCDscale_VV
-  QCDscale_ggH: QCDscale_ggH
-  QCDscale_qqH: QCDscale_qqH
-  QCDscale_VH: QCDscale_VH
-  QCDscale_ttH: QCDscale_ttH
-  PDFalphaS_gq: PDFalphaS_gq
-  PDFalphaS_gg: PDFalphaS_gg
-  PDFalphaS_qq: PDFalphaS_qq
-  PDFalphaS_ggH: PDFalphaS_ggH
-  PDFalphaS_qqH: PDFalphaS_qqH
-  PDFalphaS_VH: PDFalphaS_VH
-  PDFalphaS_ttH: PDFalphaS_ttH
-  muRF_ttbar: muRF_ttbar
-  muRF_DY: muRF_DY
-  muRF_ST: muRF_ST
-  muRF_VV: muRF_VV
-  muRF_ttV: muRF_ttV
-  muRF_singleH: muRF_singleH
-  muRF_bbWW: muRF_bbWW
-  pdfShape_ttbar: pdfShape_ttbar
-  pdfShape_DY: pdfShape_DY
-  pdfShape_ST: pdfShape_ST
-  pdfShape_VV: pdfShape_VV
-  pdfShape_ttV: pdfShape_ttV
-  pdfShape_singleH: pdfShape_singleH
-  pdfShape_bbWW: pdfShape_bbWW
-  psISR: psISR
-  psFSR_ttbar: psFSR_ttbar
-  psFSR_DY: psFSR_DY
-  psFSR_ST: psFSR_ST
-  psFSR_VV: psFSR_VV
-  psFSR_ttV: psFSR_ttV
-  psFSR_singleH: psFSR_singleH
-  ak8BBCC: ak8BBCC_{era}
-  ak8BBCC_tau21: ak8BBCC_tau21_{era}
-  ak8BBCC_msd: ak8BBCC_msd_{era}
+  btagSF_shape_hf: btag_fullShape_hf_{era}
+  btagSF_shape_lf: btag_fullShape_lf_{era}
 
+  btagSF_shape_cferr1: btag_fullShape_cferr1_{era}
+  btagSF_shape_cferr2: btag_fullShape_cferr2_{era}
+
+  btagSF_shape_hfstats1_2022: btag_fullShape_hfstats1_2022
+  btagSF_shape_hfstats1_2022EE: btag_fullShape_hfstats1_2022EE
+  btagSF_shape_hfstats1_2023: btag_fullShape_hfstats1_2023
+  btagSF_shape_hfstats1_2023BPix: btag_fullShape_hfstats1_2023BPix
+
+  btagSF_shape_hfstats2_2022: btag_fullShape_hfstats2_2022
+  btagSF_shape_hfstats2_2022EE: btag_fullShape_hfstats2_2022EE
+  btagSF_shape_hfstats2_2023: btag_fullShape_hfstats2_2023
+  btagSF_shape_hfstats2_2023BPix: btag_fullShape_hfstats2_2023BPix
+
+  btagSF_shape_lfstats1_2022: btag_fullShape_lfstats1_2022
+  btagSF_shape_lfstats1_2022EE: btag_fullShape_lfstats1_2022EE
+  btagSF_shape_lfstats1_2023: btag_fullShape_lfstats1_2023
+  btagSF_shape_lfstats1_2023BPix: btag_fullShape_lfstats1_2023BPix
+
+  btagSF_shape_lfstats2_2022: btag_fullShape_lfstats2_2022
+  btagSF_shape_lfstats2_2022EE: btag_fullShape_lfstats2_2022EE
+  btagSF_shape_lfstats2_2023: btag_fullShape_lfstats2_2023
+  btagSF_shape_lfstats2_2023BPix: btag_fullShape_lfstats2_2023BPix
+
+
+  jesTotal: scale_j_{era}
+  
+  jer0: res_j_{era}
+  jer1: res_j_{era}
+  jer2: res_j_{era}
+  jer3: res_j_{era}
+  jer4: res_j_{era}
+  jer5: res_j_{era}
+
+  topPtRW: top_pt_reweighting
+  
+  elIdSF: eff_e_id_{era}
+  muonIdSF: eff_m_id_{era}
+
+  muonIsoSF: eff_e_iso_{era}
+  
+  elTrgSF: trigger_sf_{era}
+  muonTrgSF: trigger_sf_{era}
+  dileptonTRGSF: trigger_sf_{era}
+  
+  pileup: pileup
+
+  ZpT1: dy_correction
+  ZpT2: dy_correction
+  ZpT3: dy_correction
+  ZpT4: dy_correction
+  ZpT5: dy_correction
+  ZpT6: dy_correction
+  ZpT7: dy_correction
+  ZpT8: dy_correction
+  ZpT9: dy_correction
+  ZpT10: dy_correction
+
+  muRF_ttbar: murf_envelope_ttbar
+  muRF_DY: murf_envelope_dy
+  muRF_ST: murf_envelope_ST
+  muRF_VV: murf_envelope_VV
+  muRF_ttV: murf_envelope_ttV
+  muRF_singleH: murf_envelope_H
+  muRF_bbWW: murf_envelope_hh_ggf_hbb_hww
+
+  pdfShape_ttbar: pdf_shape_ttbar
+  pdfShape_DY: pdf_shape_dy
+  pdfShape_ST: pdf_shape_ST
+  pdfShape_VV: pdf_shape_VV
+  pdfShape_ttV: pdf_shape_ttV
+  pdfShape_singleH: pdf_shape_H
+  pdfShape_bbWW: pdf_shape_hh_ggf_hbb_hww
+
+  psISR: ps_isr
+
+  psFSR_ttbar: ps_fsr_ttbar
+  psFSR_DY: ps_fsr_DY
+  psFSR_ST: ps_fsr_ST
+  psFSR_VV: ps_fsr_VV
+  psFSR_ttV: ps_fsr_ttV
+  psFSR_singleH: ps_fsr_H
+
+  ak8BBCC: eff_hbb_{era}_bkg
+  ak8BBCC_tau21: eff_hbb_{era}_bkg
+  ak8BBCC_msd: eff_hbb_{era}_bkg
+  
 rebin:
   TT_boosted:
     method: boundary
