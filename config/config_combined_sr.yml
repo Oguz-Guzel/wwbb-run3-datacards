@@ -8,7 +8,7 @@ path:
   "2023BPix":
     - /afs/cern.ch/work/a/aguzel/private/bamboo_105/HHtoWWbb_Run3/output/v1.4.8_2023BPix
 
-outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/SR_v1.4.8_adaptiveBinning_v6
+outputDir: /afs/cern.ch/work/a/aguzel/private/wwbb-run3-datacards/output/SR_v1.4.8_heuristic_v4-5_DYfix
 
 use_syst: True
 
@@ -239,96 +239,45 @@ shapeSyst:
 
 backgrounds: &backgrounds [TTbar, DY, ST_tW, ST_tchan, WJets, ZJets, WW, WZ, ZZ, ttZ, tttt, ggH, VBFH, WH, ZH, ttH, tHq, tHW]
 
-rebin_2022: &rebin_2022
+binning_2022: &binning_2022
   SR_GGF_boosted:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2022", "2022EE"]
+    method: boundary
+    params: [[0.0, 0.4, 0.7, 0.84, 0.915, 0.94, 0.97, 1.0]]
   SR_GGF_resolved1b:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2022", "2022EE"]
+    method: boundary
+    params: [[0.0, 0.4, 0.6, 0.74, 0.84, 0.94, 1.0]]
   SR_GGF_resolved2b:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2022", "2022EE"]
+    method: boundary
+    params: [[0.0, 0.4, 0.6, 0.74, 0.84, 0.9, 0.94, 1.0]]
   SR_VBF_boosted:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [qqHH_CV_1_C2V_1_kl_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2022", "2022EE"]
+    method: boundary
+    params: [[0.0, 0.6, 1.0]]
   SR_VBF_resolved:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [qqHH_CV_1_C2V_1_kl_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2022", "2022EE"]
+    method: boundary
+    params: [[0.0, 0.9, 1.0]]
 
-
-rebin_2023: &rebin_2023
+binning_2023: &binning_2023
   SR_GGF_boosted:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2023", "2023BPix"]
+    method: boundary
+    params: [[0, 0.5, 0.66, 0.76, 0.83, 0.895, 0.94, 0.97, 1]]
   SR_GGF_resolved1b:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2023", "2023BPix"]
+    method: boundary
+    params: [[0, 0.18, 0.44, 0.65, 0.81, 0.905, 0.94, 1]]
   SR_GGF_resolved2b:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [ggHH_kl_1_kt_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2023", "2023BPix"]
+    method: boundary
+    params: [[0, 0.285, 0.435, 0.59, 0.705, 0.79, 0.86, 0.91, 0.955, 0.97, 1]]
   SR_VBF_boosted:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [qqHH_CV_1_C2V_1_kl_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2023", "2023BPix"]
+    method: boundary
+    params: [[0, 0.335, 0.58, 0.705, 0.81, 1]]
   SR_VBF_resolved:
-    method: threshold3
-    params:
-      - *backgrounds
-      - [qqHH_CV_1_C2V_1_kl_1_hbbhww]
-      - 10
-      - 0.20
-      - combine_eras: ["2023", "2023BPix"]
+    method: boundary
+    params: [[0.0, 0.9, 1.0]]
 
 rebin:
-  "2022": *rebin_2022
-  "2022EE": *rebin_2022
-  "2023": *rebin_2023
-  "2023BPix": *rebin_2023
+  "2022": *binning_2022
+  "2022EE": *binning_2022
+  "2023": *binning_2023
+  "2023BPix": *binning_2023
 
 histConverter:
   SR_GGF_boosted:
